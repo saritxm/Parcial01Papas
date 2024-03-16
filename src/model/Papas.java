@@ -67,5 +67,12 @@ public class Papas {
     
     public Papas(){}
 
+    public Papas(String nombre, String especie, String zonaP) {
+        this.nombre = nombre;
+        this.especie = especie;
+        this.zonaP = zonaP;
+    }
+    
+
 
 }

@@ -45,11 +45,13 @@ public class Archivos {
             }
             for(String i : listaProp){
                 String nombre = prop.getProperty(i + ".name");
-                String epecie = prop.getProperty(i + ".especie");
+                String especie = prop.getProperty(i + ".especie");
                 String prod   = prop.getProperty(i + ".zonaprod");
+                papasCargadas.add(new Papas(nombre,especie,prod));
             }
         } catch (Exception e) {
-            // TODO: handle exception
+            
+            
         }
     }
 

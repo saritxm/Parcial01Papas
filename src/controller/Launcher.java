@@ -1,6 +1,5 @@
 package controller;
 
-import view.PanelMenu;
 import view.VentanaPrincipal;
 
 public class Launcher {
