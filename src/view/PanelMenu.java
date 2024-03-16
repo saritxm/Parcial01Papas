@@ -36,7 +36,7 @@ public class PanelMenu extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+        
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -52,7 +52,7 @@ public class PanelMenu extends javax.swing.JPanel {
 		etitulo.setFont(new Font("Open Sans", Font.BOLD, 45));
 		etitulo.setForeground(Color.WHITE);
 		add(etitulo);
-        
+
         
     }// </editor-fold>//GEN-END:initComponents
 
