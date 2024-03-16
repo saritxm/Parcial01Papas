@@ -48,6 +48,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().add(labelFondovp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+
+        menu = new PanelMenu(); 
+        PContenedor.add(menu);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
