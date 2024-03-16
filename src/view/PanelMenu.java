@@ -4,12 +4,6 @@
  */
 package view;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Font;
-
-import javax.swing.BoxLayout;
-import javax.swing.JLabel;
 
 /**
  *
@@ -17,13 +11,9 @@ import javax.swing.JLabel;
  */
 public class PanelMenu extends javax.swing.JPanel {
 
-    private JLabel etitulo;
+
 
     public PanelMenu() {
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setBackground(new Color(137,207,243));
-		setPreferredSize(new java.awt.Dimension(218,540));
-		setOpaque(true);
         initComponents();
         setVisible(true);
     }
