@@ -41,11 +41,11 @@ public class Papas {
         this.habitoC = habitoC;
     }
 
-    public String getFloracioN() {
+    public String getFloracióN() {
         return this.floracion;
     }
 
-    public void setFloracioN(String floración) {
+    public void setFloracióN(String floración) {
         this.floracion = floración;
     }
 
@@ -64,6 +64,7 @@ public class Papas {
     public void setTubéRculos(String tubérculos) {
         this.tubérculos = tubérculos;
     }
+    
 
 
 }
