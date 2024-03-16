@@ -21,8 +21,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         setTitle("Papas nativas Colombianas");
         setResizable(false);
-        getContentPane().setLayout(new BorderLayout(0,0));
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -34,19 +34,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        PContenedor = new javax.swing.JPanel();
         labelFondovp = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        PContenedor.setBackground(new java.awt.Color(0, 0, 0, 0));
+        PContenedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(PContenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 860, 370));
 
         labelFondovp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/VentanaPrincipal.jpg"))); // NOI18N
-        getContentPane().add(labelFondovp, java.awt.BorderLayout.PAGE_START);
+        getContentPane().add(labelFondovp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
-
-        menu = new PanelMenu(); 
-		getContentPane().add(menu, BorderLayout.WEST);
-        
-
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -54,6 +55,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PContenedor;
     private javax.swing.JLabel labelFondovp;
     // End of variables declaration//GEN-END:variables
 }
