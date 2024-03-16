@@ -65,6 +65,7 @@ public class Papas {
         this.tubérculos = tubérculos;
     }
     
+    public Papas(){}
 
 
 }
