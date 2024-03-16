@@ -7,7 +7,7 @@ public class Papas {
     private String habitoC;
     private String floracion;
     private String bayas;
-    private String tubérculos;
+    private String tuberculos;
 
     public String getNombre() {
         return this.nombre;
@@ -41,12 +41,12 @@ public class Papas {
         this.habitoC = habitoC;
     }
 
-    public String getFloracióN() {
+    public String getFloracioN() {
         return this.floracion;
     }
 
-    public void setFloracióN(String floración) {
-        this.floracion = floración;
+    public void setFloracioN(String floracion) {
+        this.floracion = floracion;
     }
 
     public String getBayas() {
@@ -57,12 +57,12 @@ public class Papas {
         this.bayas = bayas;
     }
 
-    public String getTubéRculos() {
-        return this.tubérculos;
+    public String getTubeRculos() {
+        return this.tuberculos;
     }
 
-    public void setTubéRculos(String tubérculos) {
-        this.tubérculos = tubérculos;
+    public void setTubeRculos(String tuberculos) {
+        this.tuberculos = tuberculos;
     }
     
     public Papas(){}
