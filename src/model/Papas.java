@@ -5,7 +5,7 @@ public class Papas {
     private String especie;
     private String zonaP;
     private String habitoC;
-    private String floración;
+    private String floracion;
     private String bayas;
     private String tubérculos;
 
@@ -41,12 +41,12 @@ public class Papas {
         this.habitoC = habitoC;
     }
 
-    public String getFloracióN() {
-        return this.floración;
+    public String getFloracioN() {
+        return this.floracion;
     }
 
-    public void setFloracióN(String floración) {
-        this.floración = floración;
+    public void setFloracioN(String floración) {
+        this.floracion = floración;
     }
 
     public String getBayas() {
