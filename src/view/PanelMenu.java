@@ -4,6 +4,11 @@
  */
 package view;
 
+import java.awt.Color;
+
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+
 /**
  *
  * @author Sara
@@ -14,7 +19,12 @@ public class PanelMenu extends javax.swing.JPanel {
      * Creates new form PanelMenu
      */
     public PanelMenu() {
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		setBackground(new Color(137,207,243));
+		setPreferredSize(new java.awt.Dimension(218,540));
+		setOpaque(true);
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -36,6 +46,11 @@ public class PanelMenu extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
         );
+        		etitulo = new JLabel("Menu");
+		etitulo.setAlignmentX(Component.CENTER_ALIGNMENT);
+		etitulo.setFont(new Font("Open Sans", Font.BOLD, 45));
+		etitulo.setForeground(Color.WHITE);
+		add(etitulo);
     }// </editor-fold>//GEN-END:initComponents
 
 
