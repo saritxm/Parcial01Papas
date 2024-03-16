@@ -20,7 +20,10 @@ public class PanelMenu extends javax.swing.JPanel {
     private JLabel etitulo;
 
     public PanelMenu() {
-
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		setBackground(new Color(137,207,243));
+		setPreferredSize(new java.awt.Dimension(218,540));
+		setOpaque(true);
         initComponents();
         setVisible(true);
     }
@@ -34,8 +37,23 @@ public class PanelMenu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(0, 0, 0));
-        setLayout(new java.awt.BorderLayout());
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+        etitulo = new JLabel("Menu");
+		etitulo.setAlignmentX(Component.CENTER_ALIGNMENT);
+		etitulo.setFont(new Font("Open Sans", Font.BOLD, 45));
+		etitulo.setForeground(Color.WHITE);
+		add(etitulo);
+        
+        
     }// </editor-fold>//GEN-END:initComponents
 
 
