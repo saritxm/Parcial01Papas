@@ -4,8 +4,6 @@
  */
 package view;
 
-import java.awt.BorderLayout;
-
 /**
  *
  * @author Sara
@@ -42,16 +40,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         PContenedor.setBackground(new java.awt.Color(0, 0, 0, 0));
         PContenedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(PContenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 860, 370));
+        getContentPane().add(PContenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 473, 862, -1));
 
         labelFondovp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/VentanaPrincipal.jpg"))); // NOI18N
         getContentPane().add(labelFondovp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
-
-        menu = new PanelMenu(); 
-        PContenedor.add(menu);
-        
     }// </editor-fold>//GEN-END:initComponents
 
     /**
