@@ -79,10 +79,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().add(labelFondovp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(805, 0, 0, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -101,7 +110,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         PMenu.removeAll();
         PMenu.add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
         PMenu.revalidate();
-        
+        PMenu.repaint();
     }
 
     private void showPanel(JPanel p){
