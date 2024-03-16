@@ -15,9 +15,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPrincipal
      */
-    private PanelInsertar pInsertar;
-    private PanelMenu Pmenu;
-    
+    private PanelInsertar pI;
+    private PanelMenu menu;
 
     public VentanaPrincipal() {
         setTitle("Papas nativas Colombianas");
@@ -43,6 +42,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().add(labelFondovp, java.awt.BorderLayout.PAGE_START);
 
         pack();
+
+        menu = new PanelMenu(); 
+		getContentPane().add(menu, BorderLayout.WEST);
+        
+
     }// </editor-fold>//GEN-END:initComponents
 
     /**
