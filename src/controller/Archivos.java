@@ -46,6 +46,7 @@ public class Archivos {
             for(String i : listaProp){
                 String nombre = prop.getProperty(i + ".name");
                 String epecie = prop.getProperty(i + ".especie");
+                String prod   = prop.getProperty(i + ".zonaprod");
             }
         } catch (Exception e) {
             // TODO: handle exception
