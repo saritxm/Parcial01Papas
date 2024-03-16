@@ -16,6 +16,7 @@ public class PanelMenu extends javax.swing.JPanel {
     public PanelMenu() {
         initComponents();
         setVisible(true);
+        setOpaque(false);
     }
 
     /**
@@ -27,11 +28,17 @@ public class PanelMenu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(0, 0, 0));
+        jButton1 = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(0,0,0,0));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setText("jButton1");
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

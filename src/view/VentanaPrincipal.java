@@ -4,6 +4,10 @@
  */
 package view;
 
+import java.awt.BorderLayout;
+
+import javax.swing.JPanel;
+
 /**
  *
  * @author Sara
@@ -13,7 +17,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPrincipal
      */
-    private PanelInsertar pI;
+    private PanelInsertar insertar;
     private PanelMenu menu;
 
     public VentanaPrincipal() {
@@ -21,6 +25,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setResizable(false);
         initComponents();
         setVisible(true);
+
+        menu = new PanelMenu();
+        menu.setOpaque(true);
+        showMenu(menu);
+
+        insertar = new PanelInsertar();
+        showPanel(insertar);
     }
 
     /**
@@ -32,18 +43,47 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PContenedor = new javax.swing.JPanel();
+        PMenu = new javax.swing.JPanel();
+        PPrincipal = new javax.swing.JPanel();
         labelFondovp = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PContenedor.setBackground(new java.awt.Color(0, 0, 0, 0));
-        PContenedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(PContenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 473, 862, -1));
+        javax.swing.GroupLayout PMenuLayout = new javax.swing.GroupLayout(PMenu);
+        PMenu.setLayout(PMenuLayout);
+        PMenuLayout.setHorizontalGroup(
+            PMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 180, Short.MAX_VALUE)
+        );
+        PMenuLayout.setVerticalGroup(
+            PMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 372, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 180, 372));
+
+        PPrincipal.setBackground(new java.awt.Color(0,0,0,0));
+
+        javax.swing.GroupLayout PPrincipalLayout = new javax.swing.GroupLayout(PPrincipal);
+        PPrincipal.setLayout(PPrincipalLayout);
+        PPrincipalLayout.setHorizontalGroup(
+            PPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 682, Short.MAX_VALUE)
+        );
+        PPrincipalLayout.setVerticalGroup(
+            PPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 372, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 682, 372));
 
         labelFondovp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/VentanaPrincipal.jpg"))); // NOI18N
         getContentPane().add(labelFondovp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jButton1.setText("jButton1");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(805, 0, 0, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -53,7 +93,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PContenedor;
+    private javax.swing.JPanel PMenu;
+    private javax.swing.JPanel PPrincipal;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel labelFondovp;
     // End of variables declaration//GEN-END:variables
+
+    private void showMenu(JPanel p){
+        p.setSize(180, 372);
+        p.setLocation(0, 0);
+        PMenu.removeAll();
+        PMenu.add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
+        PMenu.revalidate();
+        
+    }
+
+    private void showPanel(JPanel p){
+        p.setSize(682, 372);
+        p.setLocation(0, 0);
+        PPrincipal.removeAll();
+        PPrincipal.add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
+        PPrincipal.revalidate();
+        
+    }
 }
