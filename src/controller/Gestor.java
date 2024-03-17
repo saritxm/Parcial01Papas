@@ -18,8 +18,6 @@ public class Gestor {
     private Papa p,p1;
 
     public Gestor() {
-        p = new Papa("nombre","especie","zona","habito","floracion","baya","tuberculo");
-        p1 = new Papa("nombre","especie1","zona1","habito1","floracion1","baya1","tuberculo1");
         cargar();
         obtenerRegistrosPapa();
         consultarPapa(p);
