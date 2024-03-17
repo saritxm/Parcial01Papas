@@ -42,13 +42,12 @@ public class PapaDAO {
             ps.setString(5, papa.getFloracion());
             ps.setString(6, papa.getBayas());
             ps.setString(7, papa.getTuberculos());
-            
+       
             ps.executeUpdate();
             ps.close();
             Conexion.desconectar();
         }
         catch(SQLException e){
-        
         }
     }
     public Papa consultarPapa(String nombre) {
@@ -83,6 +82,7 @@ public class PapaDAO {
                 papa.setEspecie(rs.getString("especie"));
                 papa.setNombre(rs.getString("nombre"));
                 papa.setZonaP(rs.getString("zonaP"));
+                papas.add(papa);
             }
             st.close();
             Conexion.desconectar();
