@@ -10,6 +10,7 @@ import model.Papa;
 
 public class Archivos {
     private Properties prop;
+    private PapaDAO papa = new PapaDAO();
     private ArrayList<Papa> papasCargadas;
     
     public Archivos() {
@@ -51,6 +52,11 @@ public class Archivos {
             }
         } catch (Exception e) {
             
+        }
+    }
+    public void guardarPapas(){
+        for(Papa p: papasCargadas){
+            papa.agregarPapa(p);
         }
     }
     public void imprimirPapas(){
