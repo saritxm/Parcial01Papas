@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Properties;
 
-import model.Papas;
+import model.Papa;
 
 public class Archivos {
     private Properties prop;
-    private ArrayList<Papas> papasCargadas;
+    private ArrayList<Papa> papasCargadas;
     
     public Archivos() {
         this.papasCargadas = new ArrayList<>();
@@ -25,11 +25,11 @@ public class Archivos {
         }
     }
 
-    public ArrayList<Papas> getPapasCargadas() {
+    public ArrayList<Papa> getPapasCargadas() {
         return papasCargadas;
     }
 
-    public void setPapasCargadas(ArrayList<Papas> papasCargadas) {
+    public void setPapasCargadas(ArrayList<Papa> papasCargadas) {
         this.papasCargadas = papasCargadas;
     }
 
@@ -44,16 +44,18 @@ public class Archivos {
                 }
             }
             for(String i : listaProp){
-                String nombre = prop.getProperty(i + ".name");
+                String nombre = prop.getProperty(i + ".nombre");
                 String especie = prop.getProperty(i + ".especie");
                 String prod   = prop.getProperty(i + ".zonaprod");
-                papasCargadas.add(new Papas(nombre,especie,prod));
+                papasCargadas.add(new Papa(nombre,especie,prod));
             }
         } catch (Exception e) {
             
-            
         }
     }
-
-    
+    public void imprimirPapas(){
+        for(Papa i : papasCargadas){
+            System.out.println(i.toString());
+        }
+    }
 }

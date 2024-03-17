@@ -1,6 +1,6 @@
 package model;
 
-public class Papas {
+public class Papa {
     private String nombre;
     private String especie;
     private String zonaP;
@@ -65,14 +65,18 @@ public class Papas {
         this.tuberculos = tuberculos;
     }
     
-    public Papas(){}
+    public Papa(){}
 
-    public Papas(String nombre, String especie, String zonaP) {
+    public Papa(String nombre, String especie, String zonaP) {
         this.nombre = nombre;
         this.especie = especie;
         this.zonaP = zonaP;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Papa [nombre=" + nombre + ", especie=" + especie + ", zonaP=" + zonaP + "]";
+    }
 
 
 }
