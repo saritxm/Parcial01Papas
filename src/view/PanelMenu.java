@@ -26,9 +26,9 @@ public class PanelMenu extends javax.swing.JPanel {
     private void initComponents() {
 
         btnInsertar = new javax.swing.JButton();
+        btnVer = new javax.swing.JButton();
         btnConsultar = new javax.swing.JButton();
-        btnConsultarE = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
+        btnSalirGeneral = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0,0,0,0));
@@ -42,47 +42,47 @@ public class PanelMenu extends javax.swing.JPanel {
         });
         add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 130, 40));
 
-        btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/verbtn.jpg"))); // NOI18N
-        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+        btnVer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/verbtn.jpg"))); // NOI18N
+        btnVer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConsultarActionPerformed(evt);
+                btnVerActionPerformed(evt);
             }
         });
-        add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 140, 40));
+        add(btnVer, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 140, 40));
 
-        btnConsultarE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btnconsultar.jpg"))); // NOI18N
-        add(btnConsultarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 170, 40));
+        btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btnconsultar.jpg"))); // NOI18N
+        add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 170, 40));
 
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/salirbtn.jpg"))); // NOI18N
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+        btnSalirGeneral.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/salirbtn.jpg"))); // NOI18N
+        btnSalirGeneral.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
+                btnSalirGeneralActionPerformed(evt);
             }
         });
-        add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 100, 50));
+        add(btnSalirGeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 100, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/pmenu.jpg"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 370));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+    private void btnVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnConsultarActionPerformed
+    }//GEN-LAST:event_btnVerActionPerformed
 
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnInsertarActionPerformed
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+    private void btnSalirGeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirGeneralActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSalirActionPerformed
+    }//GEN-LAST:event_btnSalirGeneralActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConsultar;
-    private javax.swing.JButton btnConsultarE;
     private javax.swing.JButton btnInsertar;
-    private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnSalirGeneral;
+    private javax.swing.JButton btnVer;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
