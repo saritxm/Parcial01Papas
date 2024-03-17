@@ -41,24 +41,29 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         PMenu = new javax.swing.JPanel();
         PPrincipal = new javax.swing.JPanel();
-        labelFondovp = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        labelFondovp = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        PMenu.setBackground(new java.awt.Color(0, 0, 0, 0));
+        PMenu.setForeground(new java.awt.Color(0, 102, 0));
 
         javax.swing.GroupLayout PMenuLayout = new javax.swing.GroupLayout(PMenu);
         PMenu.setLayout(PMenuLayout);
         PMenuLayout.setHorizontalGroup(
             PMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
+            .addGap(0, 190, Short.MAX_VALUE)
         );
         PMenuLayout.setVerticalGroup(
             PMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 372, Short.MAX_VALUE)
         );
 
-        getContentPane().add(PMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 180, 372));
+        getContentPane().add(PMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 190, 372));
 
         PPrincipal.setBackground(new java.awt.Color(0,0,0,0));
 
@@ -66,17 +71,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         PPrincipal.setLayout(PPrincipalLayout);
         PPrincipalLayout.setHorizontalGroup(
             PPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 682, Short.MAX_VALUE)
+            .addGap(0, 680, Short.MAX_VALUE)
         );
         PPrincipalLayout.setVerticalGroup(
             PPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 372, Short.MAX_VALUE)
         );
 
-        getContentPane().add(PPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 682, 372));
-
-        labelFondovp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/VentanaPrincipal.jpg"))); // NOI18N
-        getContentPane().add(labelFondovp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(PPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 100, 680, 372));
 
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +87,29 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(805, 0, 0, -1));
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0, 0));
+        jPanel1.setForeground(new java.awt.Color(0, 153, 0));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/banner.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, -1));
+
+        labelFondovp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/panelp.jpg"))); // NOI18N
+        getContentPane().add(labelFondovp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 103, -1, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -101,6 +126,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel PMenu;
     private javax.swing.JPanel PPrincipal;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelFondovp;
     // End of variables declaration//GEN-END:variables
 
