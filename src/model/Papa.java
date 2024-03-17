@@ -41,11 +41,11 @@ public class Papa {
         this.habitoC = habitoC;
     }
 
-    public String getFloracioN() {
+    public String getFloracion() {
         return this.floracion;
     }
 
-    public void setFloracioN(String floracion) {
+    public void setFloracion(String floracion) {
         this.floracion = floracion;
     }
 
@@ -57,11 +57,11 @@ public class Papa {
         this.bayas = bayas;
     }
 
-    public String getTubeRculos() {
+    public String getTuberculos() {
         return this.tuberculos;
     }
 
-    public void setTubeRculos(String tuberculos) {
+    public void setTuberculos(String tuberculos) {
         this.tuberculos = tuberculos;
     }
     
