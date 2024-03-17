@@ -51,7 +51,6 @@ public class Archivos {
                 papasCargadas.add(new Papa(nombre,especie,prod));
             }
         } catch (Exception e) {
-            
         }
     }
     public void guardarPapas(){

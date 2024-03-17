@@ -67,6 +67,18 @@ public class Papa {
     
     public Papa(){}
 
+    public Papa(String nombre, String especie, String zonaP, String habitoC, String floracion, String bayas, String tuberculos) {
+        this.nombre = nombre;
+        this.especie = especie;
+        this.zonaP = zonaP;
+        this.habitoC = habitoC;
+        this.floracion = floracion;
+        this.bayas = bayas;
+        this.tuberculos = tuberculos;
+    }
+    
+    
+
     public Papa(String nombre, String especie, String zonaP) {
         this.nombre = nombre;
         this.especie = especie;

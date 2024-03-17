@@ -18,23 +18,24 @@ import model.Papa;
 import java.util.ArrayList;
 
 public class PapaDAO {
+
     private Connection con;
     private Statement st;
     private ResultSet rs;
     private PreparedStatement ps;
-    
-    public PapaDAO(){
+
+    public PapaDAO() {
         con = null;
         st = null;
         rs = null;
     }
-    
-    public void agregarPapa(Papa papa){
+
+    public void agregarPapa(Papa papa) {
         String consulta = "INSERT INTO papa VALUES (?,?,?,?,?,?,?)";
-        try{
+        try {
             con = (Connection) Conexion.getConexion();
             ps = con.prepareStatement(consulta);
-            
+
             ps.setString(1, papa.getNombre());
             ps.setString(2, papa.getEspecie());
             ps.setString(3, papa.getZonaP());
@@ -42,17 +43,18 @@ public class PapaDAO {
             ps.setString(5, papa.getFloracion());
             ps.setString(6, papa.getBayas());
             ps.setString(7, papa.getTuberculos());
-       
+
             ps.executeUpdate();
             ps.close();
             Conexion.desconectar();
-        }
-        catch(SQLException e){
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
-    public Papa consultarPapa(String nombre) {
+
+    public Papa consultarPapa(Papa p) {
         Papa papa = null;
-        String consulta = "SELECT * FROM papa where nombre='" + nombre+"'";
+        String consulta = "SELECT * FROM papa WHERE nombre ='" + p.getNombre() + "' AND especie = '" + p.getEspecie() + "' AND zonaP ='" + p.getZonaP() + "' AND habitoC ='" + p.getHabitoC() + "' AND floracion ='" + p.getFloracion() + "' AND bayas ='" + p.getBayas() + "' AND tuberculos ='" + p.getTuberculos() + "'";
         try {
             con = (Connection) Conexion.getConexion();
             st = con.createStatement();
@@ -62,6 +64,12 @@ public class PapaDAO {
                 papa.setEspecie(rs.getString("especie"));
                 papa.setNombre(rs.getString("nombre"));
                 papa.setZonaP(rs.getString("zonaP"));
+                papa.setHabitoC(rs.getString("habitoC"));
+                papa.setFloracion(rs.getString("floracion"));
+                papa.setBayas(rs.getString("bayas"));
+                papa.setTuberculos(rs.getString("tuberculos"));
+            } else {
+                System.out.println("No hay papa");
             }
             st.close();
             Conexion.desconectar();
@@ -70,6 +78,60 @@ public class PapaDAO {
         }
         return papa;
     }
+    
+    public void eliminarPapa(Papa p) {
+        String consulta = "DELETE FROM papa WHERE nombre = ?";
+
+        try {
+            Connection con = Conexion.getConexion();
+            PreparedStatement ps = con.prepareStatement(consulta);
+
+            ps.setString(1, p.getNombre());
+
+            int filasEliminadas = ps.executeUpdate();
+
+            if (filasEliminadas > 0) {
+                System.out.println("Papa eliminada correctamente.");
+            } else {
+                System.out.println("No se encontró una papa para eliminar.");
+            }
+            ps.close();
+            con.close();
+        } catch (SQLException ex) {
+            System.out.println("Error al intentar eliminar la papa: ");
+        }
+    }
+
+    public void modificarPapa(Papa papaNueva) {
+        String consulta = "UPDATE papa SET especie=?, zonaP=?, habitoC=?, floracion=?, bayas=?, tuberculos=? WHERE nombre=?";
+
+        try {
+            Connection con = Conexion.getConexion();
+            PreparedStatement ps = con.prepareStatement(consulta);
+
+            ps.setString(1, papaNueva.getEspecie());
+            ps.setString(2, papaNueva.getZonaP());
+            ps.setString(3, papaNueva.getHabitoC());
+            ps.setString(4, papaNueva.getFloracion());
+            ps.setString(5, papaNueva.getBayas());
+            ps.setString(6, papaNueva.getTuberculos());
+            ps.setString(7, papaNueva.getNombre());
+
+            int filasActualizadas = ps.executeUpdate();
+
+            if (filasActualizadas > 0) {
+                System.out.println("Papa actualizada correctamente.");
+            } else {
+                System.out.println("No se encontró una papa para actualizar.");
+            }
+
+            ps.close();
+            con.close();
+        } catch (SQLException ex) {
+            System.out.println("Error al intentar actualizar la papa: ");
+        }
+    }
+
     public ArrayList<Papa> listaDePapas() {
         ArrayList<Papa> papas = new ArrayList<Papa>();
         String consulta = "SELECT * FROM papa";

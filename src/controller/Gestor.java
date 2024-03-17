@@ -15,11 +15,16 @@ public class Gestor {
 
     private PapaDAO papaDao;
     private Archivos ar = new Archivos();
+    private Papa p,p1;
 
     public Gestor() {
+        p = new Papa("nombre","especie","zona","habito","floracion","baya","tuberculo");
+        p1 = new Papa("nombre","especie1","zona1","habito1","floracion1","baya1","tuberculo1");
         cargar();
         obtenerRegistrosPapa();
-        buscarPapa();
+        consultarPapa(p);
+        modificarPapa(p1);
+        eliminarPapa(p);
     }
 
     private void obtenerRegistrosPapa() {
@@ -38,14 +43,13 @@ public class Gestor {
                 System.out.println("*************************************************\n");
             }
         } else {
-            System.out.println("Actualmente no existen registros de estudiantes");
+            System.out.println("Actualmente no existen registros de papas");
         }
     }
 
-    private void buscarPapa() {
+    private void consultarPapa(Papa p) {
         papaDao = new PapaDAO();
-        String nombre = "ARBOLONA 1421";
-        Papa papaLocalizada = papaDao.consultarPapa(nombre);
+        Papa papaLocalizada = papaDao.consultarPapa(p);
         if (papaLocalizada != null) {
             System.out.println("**************** Papa consultada *************************");
             System.out.println("Nombre Papa: " + papaLocalizada.getNombre());
@@ -54,9 +58,20 @@ public class Gestor {
             System.out.println("*************************************************\n");
 
         } else {
-            System.out.println("No existen un estudiante con ese codigo");
+            System.out.println("No existen una papa como la entregada");
         }
     }
+    
+    private void modificarPapa(Papa p){
+        papaDao = new PapaDAO();
+        papaDao.modificarPapa(p);
+    }
+    
+    private void eliminarPapa(Papa p){
+        papaDao = new PapaDAO();
+        papaDao.eliminarPapa(p);
+    }
+    
     private void cargar(){
         ar.setProp(new File("data/preload.properties"));
         ar.cargarPapas();
