@@ -55,7 +55,9 @@ public class Archivos {
         }
     }
     public void guardarPapas(){
-        Papa p = new Papa("XD","dhaskjdsa","jhsjsahjsaj");
+        for(Papa p: papasCargadas){
+            papa.agregarPapa(p);
+        }
     }
     public void imprimirPapas(){
         for(Papa i : papasCargadas){

@@ -18,11 +18,11 @@ public class Gestor {
 
     public Gestor() {
         cargar();
-        obtenerRegistros();
-        buscarEstudiante();
+        obtenerRegistrosPapa();
+        buscarPapa();
     }
 
-    private void obtenerRegistros() {
+    private void obtenerRegistrosPapa() {
         papaDao = new PapaDAO();
         Papa papa;
         ArrayList<Papa> papas = papaDao.listaDePapas();
@@ -31,7 +31,7 @@ public class Gestor {
             for (int i = 0; i < papas.size(); i++) {
                 numeroPapa++;
                 papa = papas.get(i);
-                System.out.println("****************Estudiante No. " + numeroPapa + "**********");
+                System.out.println("****************Papa No. " + numeroPapa + "**********");
                 System.out.println("Nombre Papa: " + papa.getNombre());
                 System.out.println("Especie Papa: " + papa.getEspecie());
                 System.out.println("ZonaP papa: " + papa.getZonaP());
@@ -42,12 +42,12 @@ public class Gestor {
         }
     }
 
-    private void buscarEstudiante() {
+    private void buscarPapa() {
         papaDao = new PapaDAO();
         String nombre = "ARBOLONA 1421";
         Papa papaLocalizada = papaDao.consultarPapa(nombre);
         if (papaLocalizada != null) {
-            System.out.println("**************** Estudiante Consultado *************************");
+            System.out.println("**************** Papa consultada *************************");
             System.out.println("Nombre Papa: " + papaLocalizada.getNombre());
             System.out.println("Especie Papa: " + papaLocalizada.getEspecie());
             System.out.println("ZonaP papa : " + papaLocalizada.getZonaP());
