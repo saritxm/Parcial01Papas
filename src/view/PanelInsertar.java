@@ -45,7 +45,6 @@ public class PanelInsertar extends javax.swing.JPanel {
         bNariñoI = new javax.swing.JRadioButton();
         bBoyacaI = new javax.swing.JRadioButton();
         bCundinamarcaI = new javax.swing.JRadioButton();
-        btnSalirI = new javax.swing.JButton();
         btnLimpiarI = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
@@ -143,11 +142,8 @@ public class PanelInsertar extends javax.swing.JPanel {
         bCundinamarcaI.setText("Cundinamarca");
         add(bCundinamarcaI, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, -1, -1));
 
-        btnSalirI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/salir.jpg"))); // NOI18N
-        add(btnSalirI, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, 90, 40));
-
         btnLimpiarI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/limpiarbtn.jpg"))); // NOI18N
-        add(btnLimpiarI, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 110, 40));
+        add(btnLimpiarI, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 110, 40));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/insertar.jpg"))); // NOI18N
         add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 690, 390));
@@ -169,7 +165,6 @@ public class PanelInsertar extends javax.swing.JPanel {
     public javax.swing.JRadioButton bNariñoI;
     public javax.swing.JButton btnInsertarI;
     public javax.swing.JButton btnLimpiarI;
-    public javax.swing.JButton btnSalirI;
     private javax.swing.JTextField cajaBayas;
     private javax.swing.JTextField cajaEspecie;
     private javax.swing.JTextField cajaFloracion;

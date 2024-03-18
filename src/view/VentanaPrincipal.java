@@ -15,27 +15,36 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPrincipal
      */
-    private PanelInsertar pInsertar;
-    private PanelMenu pMenu;
-    private PanelConsultar pConsultar;
-    private PanelVer pVer;
+    public PanelInsertar pInsertar;
+    public PanelMenu pMenuE;
+    public PanelConsultar pConsultar;
+    public PanelVer pVer;
+
+    public PanelInsertar getpInsertar() {
+        return pInsertar;
+    }
+
+    public PanelMenu getpMenu() {
+        return pMenuE;
+    }
+
+    public PanelConsultar getpConsultar() {
+        return pConsultar;
+    }
+
+    public PanelVer getpVer() {
+        return pVer;
+    }
 
     public VentanaPrincipal() {
         setTitle("Papas nativas Colombianas");
         setResizable(false);
         initComponents();
-        setVisible(true);
-
-        pMenu = new PanelMenu();
-        showMenu(pMenu);
-
-        pInsertar = new PanelInsertar();
-        showPanel(pInsertar);
+        showMenu();
 
         pConsultar = new PanelConsultar();
-        
-
         pVer = new PanelVer();
+        pInsertar = new PanelInsertar();
     }
 
     /**
@@ -138,21 +147,41 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel labelFondovp;
     // End of variables declaration//GEN-END:variables
 
-    private void showMenu(JPanel p){
-        p.setSize(180, 372);
-        p.setLocation(0, 0);
+    public void showMenu(){
+        this.pMenuE = new PanelMenu();
+        pMenuE.setSize(180, 372);
+        pMenuE.setLocation(0, 0);
         PMenu.removeAll();
-        PMenu.add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
+        PMenu.add(pMenuE, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
         PMenu.revalidate();
         PMenu.repaint();
+        setVisible(true);
     }
 
-    private void showPanel(JPanel p){
-        p.setSize(682, 372);
-        p.setLocation(0, 0);
+    public void showConsultar(){
+        pConsultar.setSize(682, 372);
+        pConsultar.setLocation(0, 0);
         PPrincipal.removeAll();
-        PPrincipal.add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
+        PPrincipal.add(pConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
         PPrincipal.revalidate();
-        
+        PPrincipal.repaint();
+    }
+
+    public void showVer(){
+        pVer.setSize(682, 372);
+        pVer.setLocation(0, 0);
+        PPrincipal.removeAll();
+        PPrincipal.add(pVer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
+        PPrincipal.revalidate();
+        PPrincipal.repaint();
+    }
+
+    public void showInsertar(){
+        pInsertar.setSize(682, 372);
+        pInsertar.setLocation(0, 0);
+        PPrincipal.removeAll();
+        PPrincipal.add(pInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
+        PPrincipal.revalidate();
+        PPrincipal.repaint();
     }
 }

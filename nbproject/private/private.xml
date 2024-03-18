@@ -3,22 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Sara/Documents/NetBeansProjects/Parcial01Papas/src/view/PanelMenu.java</file>
-            <file>file:/C:/Users/Sara/Documents/NetBeansProjects/Parcial01Papas/src/view/VentanaPrincipal.java</file>
-            <file>file:/C:/Users/Sara/Documents/NetBeansProjects/Parcial01Papas/src/view/banner.jpg</file>
-            <file>file:/C:/Users/Sara/Documents/NetBeansProjects/Parcial01Papas/src/view/panelp.jpg</file>
-            <file>file:/C:/Users/Sara/Documents/NetBeansProjects/Parcial01Papas/src/controller/Gestor.java</file>
-            <file>file:/C:/Users/Sara/Documents/NetBeansProjects/Parcial01Papas/src/controller/Launcher.java</file>
-            <file>file:/C:/Users/Sara/Documents/NetBeansProjects/Parcial01Papas/src/view/PanelC.jpg</file>
-            <file>file:/C:/Users/Sara/Documents/NetBeansProjects/Parcial01Papas/src/view/PanelConsultar.java</file>
-            <file>file:/C:/Users/Sara/Documents/NetBeansProjects/Parcial01Papas/src/view/btninsertar.jpg</file>
-            <file>file:/C:/Users/Sara/Documents/NetBeansProjects/Parcial01Papas/src/view/VentanaP.java</file>
-            <file>file:/C:/Users/Sara/Documents/NetBeansProjects/Parcial01Papas/src/view/PanelVer.java</file>
-            <file>file:/C:/Users/Sara/Documents/NetBeansProjects/Parcial01Papas/src/view/VentanaPrincipal.jpg</file>
-            <file>file:/C:/Users/Sara/Documents/NetBeansProjects/Parcial01Papas/src/controller/Archivos.java</file>
-            <file>file:/C:/Users/Sara/Documents/NetBeansProjects/Parcial01Papas/src/view/VentanaProperties.jpg</file>
-            <file>file:/C:/Users/Sara/Documents/NetBeansProjects/Parcial01Papas/src/controller/PapaDAO.java</file>
-            <file>file:/C:/Users/Sara/Documents/NetBeansProjects/Parcial01Papas/src/view/PanelInsertar.java</file>
+            <file>file:/X:/Programacion/Parcial01Papas/src/view/PanelMenu.java</file>
+            <file>file:/X:/Programacion/Parcial01Papas/src/view/PanelVer.java</file>
+            <file>file:/X:/Programacion/Parcial01Papas/src/view/PanelInsertar.java</file>
+            <file>file:/X:/Programacion/Parcial01Papas/src/view/VentanaPrincipal.java</file>
+            <file>file:/X:/Programacion/Parcial01Papas/src/view/PanelConsultar.java</file>
+            <file>file:/X:/Programacion/Parcial01Papas/src/view/VentanaPrincipal.jpg</file>
         </group>
     </open-files>
 </project-private>
