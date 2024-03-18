@@ -178,7 +178,7 @@ public class PanelConsultar extends javax.swing.JPanel {
     public javax.swing.JButton btnEliminarC;
     public javax.swing.JButton btnGuardarC;
     public javax.swing.JButton btnLimpiarC;
-    public javax.swing.JButton btnModificarC;
+    private javax.swing.JButton btnModificarC;
     public javax.swing.JTextField cajaBayasC;
     public javax.swing.JTextField cajaEspecieC;
     public javax.swing.JTextField cajaFloracionC;

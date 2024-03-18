@@ -30,6 +30,7 @@ public class PanelMenu extends javax.swing.JPanel {
         btnVerM = new javax.swing.JButton();
         btnConsultarM = new javax.swing.JButton();
         btnSalirGeneral = new javax.swing.JButton();
+        btnEditarM = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0,0,0,0));
@@ -39,20 +40,33 @@ public class PanelMenu extends javax.swing.JPanel {
         add(btnInsertarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 130, 40));
 
         btnVerM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/verbtn.jpg"))); // NOI18N
-        add(btnVerM, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 140, 40));
+        btnVerM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerMActionPerformed(evt);
+            }
+        });
+        add(btnVerM, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 140, 40));
 
         btnConsultarM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btnconsultar.jpg"))); // NOI18N
-        add(btnConsultarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 170, 40));
+        add(btnConsultarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 170, 40));
 
         btnSalirGeneral.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/salirbtn.jpg"))); // NOI18N
         add(btnSalirGeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 100, 50));
+
+        btnEditarM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btnEditar.jpg"))); // NOI18N
+        add(btnEditarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 90, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/pmenu.jpg"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 370));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnVerMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVerMActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnConsultarM;
+    public javax.swing.JButton btnEditarM;
     public javax.swing.JButton btnInsertarM;
     public javax.swing.JButton btnSalirGeneral;
     public javax.swing.JButton btnVerM;
