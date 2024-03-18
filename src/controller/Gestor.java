@@ -9,6 +9,8 @@ package controller;
  * @author Carlos Riveros
  */
 import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import model.Papa;
 import view.PanelConsultar;
@@ -17,7 +19,7 @@ import view.PanelMenu;
 import view.PanelVer;
 import view.VentanaP;
 import view.VentanaPrincipal;
-public class Gestor {
+public class Gestor implements ActionListener {
 
     private PapaDAO papaDao;
     private Archivos ar = new Archivos();
@@ -45,9 +47,8 @@ public class Gestor {
        this.pInsertar = new PanelInsertar();
        this.pMenu = new PanelMenu();
        this.pVer = new PanelVer();
-       //
-       
-        
+       //Escucha a los botones y radioButtons
+
     }
 
     private void obtenerRegistrosPapa() {
@@ -99,5 +100,11 @@ public class Gestor {
         ar.setProp(new File("data/preload.properties"));
         ar.cargarPapas();
         ar.guardarPapas();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
 }
