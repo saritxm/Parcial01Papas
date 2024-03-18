@@ -48,7 +48,7 @@ public class PapaDAO {
             ps.close();
             Conexion.desconectar();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("No se pueden agregar elementos, verifique que ninguno se repita o que el elmento ya este en la base de datos");
         }
     }
 
