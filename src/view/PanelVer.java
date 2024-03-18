@@ -26,21 +26,148 @@ public class PanelVer extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
+        radioZonas = new javax.swing.ButtonGroup();
+        eNombre = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        eEspecie = new javax.swing.JLabel();
+        eHabito = new javax.swing.JLabel();
+        eFloracion = new javax.swing.JLabel();
+        eBayas = new javax.swing.JLabel();
+        eTuberculos = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        eZona = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
         Fondo = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
+        eNombre.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        eNombre.setForeground(new java.awt.Color(255, 204, 102));
+        eNombre.setText("Nombre");
+        add(eNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Consultar");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        eEspecie.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        eEspecie.setForeground(new java.awt.Color(255, 204, 102));
+        eEspecie.setText("Especie");
+        add(eEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
+
+        eHabito.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        eHabito.setForeground(new java.awt.Color(255, 204, 102));
+        eHabito.setText("Hábito de crecimiento");
+        add(eHabito, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+
+        eFloracion.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        eFloracion.setForeground(new java.awt.Color(255, 204, 102));
+        eFloracion.setText("Floración");
+        add(eFloracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
+
+        eBayas.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        eBayas.setForeground(new java.awt.Color(255, 204, 102));
+        eBayas.setText("Bayas");
+        add(eBayas, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
+
+        eTuberculos.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        eTuberculos.setForeground(new java.awt.Color(255, 204, 102));
+        eTuberculos.setText("Tubérculos");
+        add(eTuberculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
+
+        jTextField1.setBackground(new java.awt.Color(244, 219, 168));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 200, -1));
+
+        jTextField2.setBackground(new java.awt.Color(244, 219, 168));
+        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 200, -1));
+
+        jTextField3.setBackground(new java.awt.Color(244, 219, 168));
+        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 200, -1));
+
+        jTextField4.setBackground(new java.awt.Color(244, 219, 168));
+        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 200, -1));
+
+        jTextField5.setBackground(new java.awt.Color(244, 219, 168));
+        add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 200, -1));
+
+        jTextField6.setBackground(new java.awt.Color(244, 219, 168));
+        add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 200, -1));
+
+        eZona.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        eZona.setForeground(new java.awt.Color(255, 204, 102));
+        eZona.setText("Zona de Producción");
+        add(eZona, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, -1, -1));
+
+        radioZonas.add(jRadioButton1);
+        jRadioButton1.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        jRadioButton1.setForeground(new java.awt.Color(245, 219, 167));
+        jRadioButton1.setText("Nariño");
+        add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 70, -1, -1));
+
+        radioZonas.add(jRadioButton2);
+        jRadioButton2.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        jRadioButton2.setForeground(new java.awt.Color(244, 219, 168));
+        jRadioButton2.setText("Boyacá");
+        add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, -1, -1));
+
+        radioZonas.add(jRadioButton3);
+        jRadioButton3.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        jRadioButton3.setForeground(new java.awt.Color(244, 219, 168));
+        jRadioButton3.setText("Cundinamarca");
+        add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 150, -1, -1));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/salirver.jpg"))); // NOI18N
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 90, 40));
+
+        jComboBox1.setBackground(new java.awt.Color(246, 201, 111));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 180, -1));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/panelVer.jpg"))); // NOI18N
         add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 370));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel eBayas;
+    private javax.swing.JLabel eEspecie;
+    private javax.swing.JLabel eFloracion;
+    private javax.swing.JLabel eHabito;
+    private javax.swing.JLabel eNombre;
+    private javax.swing.JLabel eTuberculos;
+    private javax.swing.JLabel eZona;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.ButtonGroup radioZonas;
     // End of variables declaration//GEN-END:variables
 }

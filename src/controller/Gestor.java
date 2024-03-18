@@ -11,11 +11,15 @@ package controller;
 import java.util.ArrayList;
 import java.io.File;
 import model.Papa;
+import view.VentanaP;
+import view.VentanaPrincipal;
 public class Gestor {
 
     private PapaDAO papaDao;
     private Archivos ar = new Archivos();
     private Papa p,p1;
+    private VentanaPrincipal vPrincipal;
+    private VentanaP vProperties;
 
     public Gestor() {
         p = new Papa("nombre","especie","zona","habito","floracion","baya","tuberculo");
@@ -25,6 +29,11 @@ public class Gestor {
         consultarPapa(p);
         modificarPapa(p1);
         eliminarPapa(p);
+       //Instanciación de la vista 
+       this.vPrincipal = new VentanaPrincipal();
+       this.vProperties = new VentanaP();
+
+        
     }
 
     private void obtenerRegistrosPapa() {
