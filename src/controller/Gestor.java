@@ -69,10 +69,14 @@ public class Gestor implements ActionListener {
     }
 
     private void obtenerRegistrosPapa() {
-        this.vPrincipal.getpVer().jComboBoxV.removeAllItems();
-        for(Papa i : papasCargadas){
-            this.vPrincipal.getpVer().jComboBoxV.addItem(i.getNombre());
-        }     
+       try {
+         this.vPrincipal.getpVer().jComboBoxV.removeAllItems();
+         for(Papa i : papasCargadas){
+             this.vPrincipal.getpVer().jComboBoxV.addItem(i.getNombre());
+         }    
+       } catch (Exception e) {
+        // TODO: handle exception
+       } 
     }
 
     private void asigancionVerAll(){

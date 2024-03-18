@@ -15,6 +15,7 @@ public class PanelVer extends javax.swing.JPanel {
      */
     public PanelVer() {
         initComponents();
+        deshabilitarAll();
     }
 
     /**
@@ -85,21 +86,27 @@ public class PanelVer extends javax.swing.JPanel {
         add(eTuberculosV, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
 
         cajaNombreV.setBackground(new java.awt.Color(244, 219, 168));
+        cajaNombreV.setDisabledTextColor(new java.awt.Color(244, 219, 168));
         add(cajaNombreV, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 200, -1));
 
         cajaEspecieV.setBackground(new java.awt.Color(244, 219, 168));
+        cajaEspecieV.setDisabledTextColor(new java.awt.Color(244, 219, 168));
         add(cajaEspecieV, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 200, -1));
 
         cajaHabitoV.setBackground(new java.awt.Color(244, 219, 168));
+        cajaHabitoV.setDisabledTextColor(new java.awt.Color(244, 219, 168));
         add(cajaHabitoV, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 200, -1));
 
         cajaFloracionV.setBackground(new java.awt.Color(244, 219, 168));
+        cajaFloracionV.setDisabledTextColor(new java.awt.Color(244, 219, 168));
         add(cajaFloracionV, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 200, -1));
 
         cajaBayasV.setBackground(new java.awt.Color(244, 219, 168));
+        cajaBayasV.setDisabledTextColor(new java.awt.Color(244, 219, 168));
         add(cajaBayasV, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 200, -1));
 
         cajaTuberculosV.setBackground(new java.awt.Color(244, 219, 168));
+        cajaTuberculosV.setDisabledTextColor(new java.awt.Color(244, 219, 168));
         add(cajaTuberculosV, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 200, -1));
 
         eZonaV.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
@@ -156,4 +163,17 @@ public class PanelVer extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     public javax.swing.ButtonGroup radioZonas;
     // End of variables declaration//GEN-END:variables
+
+    private void deshabilitarAll(){
+        cajaBayasV.setEditable(false);
+        cajaEspecieV.setEditable(false);
+        cajaFloracionV.setEditable(false);
+        cajaHabitoV.setEditable(false);
+        cajaNombreV.setEditable(false);
+        cajaTuberculosV.setEditable(false);
+
+        bBoyacaV.setEnabled(false);
+        bCundinamarcaV.setEnabled(false);
+        bNariñoV.setEnabled(false);
+    }
 }
