@@ -87,7 +87,9 @@ public class PanelMenu extends javax.swing.JPanel {
     public javax.swing.JButton getBtnVerM() {
         return btnVerM;
     }
-
+    public javax.swing.JButton getBtnEditarM() {
+        return btnEditarM;
+    }
     public javax.swing.JLabel getjLabel1() {
         return jLabel1;
     }
