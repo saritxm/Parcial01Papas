@@ -44,7 +44,6 @@ public class PanelVer extends javax.swing.JPanel {
         bNariñoV = new javax.swing.JRadioButton();
         bBoyacaV = new javax.swing.JRadioButton();
         bCundinamarcaV = new javax.swing.JRadioButton();
-        btnSalirV = new javax.swing.JButton();
         jComboBoxV = new javax.swing.JComboBox<>();
         Fondo = new javax.swing.JLabel();
 
@@ -86,11 +85,6 @@ public class PanelVer extends javax.swing.JPanel {
         add(eTuberculosV, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
 
         cajaNombreV.setBackground(new java.awt.Color(244, 219, 168));
-        cajaNombreV.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cajaNombreVActionPerformed(evt);
-            }
-        });
         add(cajaNombreV, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 200, -1));
 
         cajaEspecieV.setBackground(new java.awt.Color(244, 219, 168));
@@ -131,9 +125,6 @@ public class PanelVer extends javax.swing.JPanel {
         bCundinamarcaV.setText("Cundinamarca");
         add(bCundinamarcaV, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 150, -1, -1));
 
-        btnSalirV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/salirver.jpg"))); // NOI18N
-        add(btnSalirV, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 90, 40));
-
         jComboBoxV.setBackground(new java.awt.Color(246, 201, 111));
         jComboBoxV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBoxV, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 180, -1));
@@ -142,17 +133,12 @@ public class PanelVer extends javax.swing.JPanel {
         add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 370));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cajaNombreVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaNombreVActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cajaNombreVActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
     public javax.swing.JRadioButton bBoyacaV;
     public javax.swing.JRadioButton bCundinamarcaV;
     public javax.swing.JRadioButton bNariñoV;
-    public javax.swing.JButton btnSalirV;
     public javax.swing.JTextField cajaBayasV;
     public javax.swing.JTextField cajaEspecieV;
     public javax.swing.JTextField cajaFloracionV;
@@ -168,6 +154,6 @@ public class PanelVer extends javax.swing.JPanel {
     private javax.swing.JLabel eZonaV;
     public javax.swing.JComboBox<String> jComboBoxV;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.ButtonGroup radioZonas;
+    public javax.swing.ButtonGroup radioZonas;
     // End of variables declaration//GEN-END:variables
 }
