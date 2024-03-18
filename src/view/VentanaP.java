@@ -85,11 +85,23 @@ public class VentanaP extends javax.swing.JFrame {
         eZonasP.setForeground(new java.awt.Color(204, 255, 255));
         eZonasP.setText("Zona de Producción");
         jPanel1.add(eZonasP, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, -1, -1));
+
+        cajaNombreP.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.add(cajaNombreP, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 200, -1));
+
+        cajaEspecieP.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.add(cajaEspecieP, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 200, -1));
+
+        cajaHabitoP.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.add(cajaHabitoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 200, -1));
+
+        cajaFloracionP.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.add(cajaFloracionP, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 200, -1));
+
+        cajaBayasP.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.add(cajaBayasP, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, 200, -1));
+
+        cajaTuberculosP.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.add(cajaTuberculosP, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 200, -1));
 
         zonasP.add(bNariñoP);
