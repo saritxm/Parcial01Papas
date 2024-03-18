@@ -11,6 +11,10 @@ package controller;
 import java.util.ArrayList;
 import java.io.File;
 import model.Papa;
+import view.PanelConsultar;
+import view.PanelInsertar;
+import view.PanelMenu;
+import view.PanelVer;
 import view.VentanaP;
 import view.VentanaPrincipal;
 public class Gestor {
@@ -18,8 +22,14 @@ public class Gestor {
     private PapaDAO papaDao;
     private Archivos ar = new Archivos();
     private Papa p,p1;
+    
     private VentanaPrincipal vPrincipal;
     private VentanaP vProperties;
+    
+    private PanelConsultar pConsultar;
+    private PanelInsertar pInsertar;
+    private PanelMenu pMenu;
+    private PanelVer pVer;
 
     public Gestor() {
         cargar();
@@ -30,7 +40,13 @@ public class Gestor {
        //Instanciación de la vista 
        this.vPrincipal = new VentanaPrincipal();
        this.vProperties = new VentanaP();
-
+       //Instanciacion de los paneles 
+       this.pConsultar = new PanelConsultar();
+       this.pInsertar = new PanelInsertar();
+       this.pMenu = new PanelMenu();
+       this.pVer = new PanelVer();
+       //
+       
         
     }
 
