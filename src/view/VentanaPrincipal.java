@@ -15,8 +15,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPrincipal
      */
-    private PanelInsertar insertar;
-    private PanelMenu menu;
+    private PanelInsertar pInsertar;
+    private PanelMenu pMenu;
+    private PanelConsultar pConsultar;
+    private PanelVer pVer;
 
     public VentanaPrincipal() {
         setTitle("Papas nativas Colombianas");
@@ -24,11 +26,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         initComponents();
         setVisible(true);
 
-        menu = new PanelMenu();
-        showMenu(menu);
+        pMenu = new PanelMenu();
+        showMenu(pMenu);
 
-        insertar = new PanelInsertar();
-        showPanel(insertar);
+        pInsertar = new PanelInsertar();
+        showPanel(pInsertar);
+
+        pConsultar = new PanelConsultar();
+        
+
+        pVer = new PanelVer();
     }
 
     /**

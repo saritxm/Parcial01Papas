@@ -28,10 +28,6 @@ public class Gestor implements ActionListener {
     private VentanaPrincipal vPrincipal;
     private VentanaP vProperties;
     
-    private PanelConsultar pConsultar;
-    private PanelInsertar pInsertar;
-    private PanelMenu pMenu;
-    private PanelVer pVer;
 
     public Gestor() {
         cargar();
@@ -43,10 +39,7 @@ public class Gestor implements ActionListener {
        this.vPrincipal = new VentanaPrincipal();
        this.vProperties = new VentanaP();
        //Instanciacion de los paneles 
-       this.pConsultar = new PanelConsultar();
-       this.pInsertar = new PanelInsertar();
-       this.pMenu = new PanelMenu();
-       this.pVer = new PanelVer();
+
        //Escucha a los botones y radioButtons
 
     }
