@@ -1,4 +1,4 @@
-package controller;
+package model;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -6,14 +6,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Properties;
 
-import model.Papa;
+import controller.PapaDAO;
 
-public class Archivos {
+public class ArchivosProp {
     private Properties prop;
     private PapaDAO papa = new PapaDAO();
     private ArrayList<Papa> papasCargadas;
     
-    public Archivos() {
+    public ArchivosProp() {
         this.papasCargadas = new ArrayList<>();
         this.prop          = new Properties();
     }

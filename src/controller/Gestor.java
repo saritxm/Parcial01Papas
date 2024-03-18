@@ -12,60 +12,89 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+
+import model.ArchivosProp;
 import model.Papa;
-import view.PanelConsultar;
-import view.PanelInsertar;
-import view.PanelMenu;
-import view.PanelVer;
 import view.VentanaP;
 import view.VentanaPrincipal;
 public class Gestor implements ActionListener {
 
     private PapaDAO papaDao;
-    private Archivos ar = new Archivos();
-    private Papa p,p1;
+    private ArchivosProp ar = new ArchivosProp();
+    private ArrayList<Papa> papasCargadas;
     
     private VentanaPrincipal vPrincipal;
     private VentanaP vProperties;
-    
 
     public Gestor() {
-        cargar();
-        obtenerRegistrosPapa();
-        consultarPapa(p);
-        modificarPapa(p1);
-        eliminarPapa(p);
+        
        //Instanciación de la vista 
        this.vPrincipal = new VentanaPrincipal();
        this.vProperties = new VentanaP();
+       this.papaDao = new PapaDAO();
        //Instanciacion de los paneles 
 
        //Escucha a los botones y radioButtons
+       this.vPrincipal.getpConsultar().btnModificarC.addActionListener(this);
+       this.vPrincipal.getpConsultar().btnLimpiarC.addActionListener(this);
+       this.vPrincipal.getpConsultar().btnGuardarC.addActionListener(this);
+       this.vPrincipal.getpConsultar().btnEliminarC.addActionListener(this);
 
+       this.vPrincipal.getpConsultar().bNariñoC.addActionListener(this);
+       this.vPrincipal.getpConsultar().bBoyacaC.addActionListener(this);
+       this.vPrincipal.getpConsultar().bCundinamarcaC.addActionListener(this);
+        
+        this.vPrincipal.getpInsertar().btnLimpiarI.addActionListener(this);
+        this.vPrincipal.getpInsertar().btnInsertarI.addActionListener(this);
+
+        this.vPrincipal.getpInsertar().bNariñoI.addActionListener(this);
+        this.vPrincipal.getpInsertar().bBoyacaI.addActionListener(this);
+        this.vPrincipal.getpInsertar().bCundinamarcaI.addActionListener(this);
+        
+        this.vPrincipal.getpMenu().getBtnConsultarM().addActionListener(this);
+        this.vPrincipal.getpMenu().getBtnInsertarM().addActionListener(this);
+        this.vPrincipal.getpMenu().getBtnVerM().addActionListener(this);
+        this.vPrincipal.getpMenu().getBtnSalirGeneral().addActionListener(this);
+
+        this.vPrincipal.getpVer().jComboBoxV.addActionListener(this);
+
+        this.vProperties.btnSiguienteP.addActionListener(this);
+        this.vProperties.bNariñoP.addActionListener(this);
+        this.vProperties.bBoyacaP.addActionListener(this);
+        this.vProperties.bCundinamarcaP.addActionListener(this);
+
+        papasCargadas = new ArrayList<>(papaDao.listaDePapas());
+        obtenerRegistrosPapa();
+        initialize();
     }
 
     private void obtenerRegistrosPapa() {
-        papaDao = new PapaDAO();
-        Papa papa;
-        ArrayList<Papa> papas = papaDao.listaDePapas();
-        if (!papas.isEmpty()) {
-            int numeroPapa = 0;
-            for (int i = 0; i < papas.size(); i++) {
-                numeroPapa++;
-                papa = papas.get(i);
-                System.out.println("****************Papa No. " + numeroPapa + "**********");
-                System.out.println("Nombre Papa: " + papa.getNombre());
-                System.out.println("Especie Papa: " + papa.getEspecie());
-                System.out.println("ZonaP papa: " + papa.getZonaP());
-                System.out.println("*************************************************\n");
-            }
-        } else {
-            System.out.println("Actualmente no existen registros de papas");
-        }
+       try {
+         this.vPrincipal.getpVer().jComboBoxV.removeAllItems();
+         for(Papa i : papasCargadas){
+             this.vPrincipal.getpVer().jComboBoxV.addItem(i.getNombre());
+         }    
+       } catch (Exception e) {
+        // TODO: handle exception
+       } 
+    }
+
+    private void asigancionVerAll(){
+        this.vPrincipal.getpVer().radioZonas.setSelected(this.vPrincipal.getpVer().radioZonas.getSelection(), false);
+        Papa p = papasCargadas.get(vPrincipal.getpVer().jComboBoxV.getSelectedIndex());
+        this.vPrincipal.getpVer().cajaNombreV.setText(p.getNombre());
+        this.vPrincipal.getpVer().cajaEspecieV.setText(p.getEspecie());
+        this.vPrincipal.getpVer().cajaBayasV.setText(p.getBayas());
+        this.vPrincipal.getpVer().cajaFloracionV.setText(p.getFloracion());
+        this.vPrincipal.getpVer().cajaTuberculosV.setText(p.getTuberculos());
+        this.vPrincipal.getpVer().cajaHabitoV.setText(p.getHabitoC());
+        if(p.getZonaP().equals("NariÃ±o")) this.vPrincipal.getpVer().bNariñoV.setSelected(true);
+        else if (p.getZonaP().equals("Cundinamarca"))this.vPrincipal.getpVer().bCundinamarcaV.setSelected(true);
+        else if (p.getZonaP().equals("Boyaca"))this.vPrincipal.getpVer().bBoyacaV.setSelected(true);
     }
 
     private void consultarPapa(Papa p) {
-        papaDao = new PapaDAO();
+        
         Papa papaLocalizada = papaDao.consultarPapa(p);
         if (papaLocalizada != null) {
             System.out.println("**************** Papa consultada *************************");
@@ -95,9 +124,29 @@ public class Gestor implements ActionListener {
         ar.guardarPapas();
     }
 
+    private void initialize(){
+        vPrincipal.setVisible(true);
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+        if(e.getSource() == this.vPrincipal.pMenuE.btnConsultarM){
+            this.vPrincipal.showConsultar();
+            
+        }
+        else if(e.getSource() == this.vPrincipal.pMenuE.btnInsertarM){
+            this.vPrincipal.showInsertar();
+        }
+        else if(e.getSource() == this.vPrincipal.pMenuE.btnVerM){
+            obtenerRegistrosPapa();
+            this.vPrincipal.showVer();        
+        }
+        else if(e.getSource() == this.vPrincipal.getpVer().jComboBoxV){
+            try {
+                asigancionVerAll();
+            } catch (Exception e2) {
+                
+            }
+        }
     }
 }

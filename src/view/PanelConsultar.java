@@ -27,7 +27,6 @@ public class PanelConsultar extends javax.swing.JPanel {
     private void initComponents() {
 
         ZonasC = new javax.swing.ButtonGroup();
-        jComboBoxC = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         eNombreC = new javax.swing.JLabel();
         eEspecieC = new javax.swing.JLabel();
@@ -52,10 +51,6 @@ public class PanelConsultar extends javax.swing.JPanel {
         Fondo = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jComboBoxC.setBackground(new java.awt.Color(204, 255, 204));
-        jComboBoxC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBoxC, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 170, -1));
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 255, 204));
@@ -183,7 +178,7 @@ public class PanelConsultar extends javax.swing.JPanel {
     public javax.swing.JButton btnEliminarC;
     public javax.swing.JButton btnGuardarC;
     public javax.swing.JButton btnLimpiarC;
-    public javax.swing.JButton btnModificarC;
+    private javax.swing.JButton btnModificarC;
     public javax.swing.JTextField cajaBayasC;
     public javax.swing.JTextField cajaEspecieC;
     public javax.swing.JTextField cajaFloracionC;
@@ -197,7 +192,6 @@ public class PanelConsultar extends javax.swing.JPanel {
     private javax.swing.JLabel eNombreC;
     private javax.swing.JLabel eTuberculosC;
     private javax.swing.JLabel eZonaC;
-    public javax.swing.JComboBox<String> jComboBoxC;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
