@@ -30,6 +30,7 @@ public class PanelFloracion extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         cajaColorCFL = new javax.swing.JTextField();
         cajaNumeroPapasCFL = new javax.swing.JTextField();
+        btnConsultarFL = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -42,7 +43,12 @@ public class PanelFloracion extends javax.swing.JPanel {
         jLabel1.setText("Número de papas");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, -1, -1));
         add(cajaColorCFL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 210, -1));
+
+        cajaNumeroPapasCFL.setEnabled(false);
         add(cajaNumeroPapasCFL, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 240, -1));
+
+        btnConsultarFL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/consultarPFL.jpg"))); // NOI18N
+        add(btnConsultarFL, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 170, 40));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/panelFloracion.jpg"))); // NOI18N
         add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 300));
@@ -51,8 +57,9 @@ public class PanelFloracion extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
-    private javax.swing.JTextField cajaColorCFL;
-    private javax.swing.JTextField cajaNumeroPapasCFL;
+    public javax.swing.JButton btnConsultarFL;
+    public javax.swing.JTextField cajaColorCFL;
+    public javax.swing.JTextField cajaNumeroPapasCFL;
     private javax.swing.JLabel eLabelCFl;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

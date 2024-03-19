@@ -46,6 +46,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pConsultar = new PanelConsultar();
         pVer = new PanelVer();
         pInsertar = new PanelInsertar();
+        pEditar = new PanelEditar();
     }
 
     /**

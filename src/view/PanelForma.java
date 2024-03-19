@@ -30,6 +30,7 @@ public class PanelForma extends javax.swing.JPanel {
         cajaFormaCF = new javax.swing.JTextField();
         eLabelCF = new javax.swing.JLabel();
         jComboBoxPapasCF = new javax.swing.JComboBox<>();
+        btnConsultarF = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -49,6 +50,9 @@ public class PanelForma extends javax.swing.JPanel {
         jComboBoxPapasCF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBoxPapasCF, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 220, -1));
 
+        btnConsultarF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/consultarPForma.jpg"))); // NOI18N
+        add(btnConsultarF, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 170, 50));
+
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/panelForma.jpg"))); // NOI18N
         add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 300));
     }// </editor-fold>//GEN-END:initComponents
@@ -56,7 +60,8 @@ public class PanelForma extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
-    private javax.swing.JTextField cajaFormaCF;
+    public javax.swing.JButton btnConsultarF;
+    public javax.swing.JTextField cajaFormaCF;
     private javax.swing.JLabel eLabelCF;
     private javax.swing.JLabel eTuberculoCF;
     public javax.swing.JComboBox<String> jComboBoxPapasCF;

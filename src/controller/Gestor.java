@@ -57,13 +57,17 @@ public class Gestor implements ActionListener {
         this.vPrincipal.getpConsultar().pNombre.bCundinamarcaCN.addActionListener(this);
 
         this.vPrincipal.getpConsultar().pEspecie.jComboBoxEspecie.addActionListener(this);
+        this.vPrincipal.getpConsultar().pEspecie.btnConsultarEspecie.addActionListener(this);
         //Panel Zonas
         this.vPrincipal.getpConsultar().pZonas.bNariñoCZ.addActionListener(this);
         this.vPrincipal.getpConsultar().pZonas.bBoyacaCZ.addActionListener(this);
         this.vPrincipal.getpConsultar().pZonas.bCundinamarcaCZ.addActionListener(this);
 
         this.vPrincipal.getpConsultar().pForma.jComboBoxPapasCF.addActionListener(this);
-        
+        this.vPrincipal.getpConsultar().pForma.btnConsultarF.addActionListener(this);
+
+        this.vPrincipal.getpConsultar().pFloracion.btnConsultarFL.addActionListener(this);
+
         this.vPrincipal.getpMenu().getBtnConsultarM().addActionListener(this);
         this.vPrincipal.getpMenu().getBtnInsertarM().addActionListener(this);
         this.vPrincipal.getpMenu().getBtnVerM().addActionListener(this);
@@ -151,9 +155,10 @@ public class Gestor implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.vPrincipal.pMenuE.btnConsultarM) {
             this.vPrincipal.showConsultar();
-
         } else if (e.getSource() == this.vPrincipal.pMenuE.btnInsertarM) {
             this.vPrincipal.showInsertar();
+        }else if (e.getSource() == this.vPrincipal.pMenuE.btnEditarM) {
+            this.vPrincipal.showEditar();
         } else if (e.getSource() == this.vPrincipal.pMenuE.btnVerM) {
             obtenerRegistrosPapa();
             this.vPrincipal.showVer();

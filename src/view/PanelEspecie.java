@@ -30,6 +30,7 @@ public class PanelEspecie extends javax.swing.JPanel {
         cajaEspecieCE = new javax.swing.JTextField();
         jComboBoxEspecie = new javax.swing.JComboBox<>();
         eLabelCE = new javax.swing.JLabel();
+        btnConsultarEspecie = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -46,14 +47,27 @@ public class PanelEspecie extends javax.swing.JPanel {
         eLabelCE.setText("Papas");
         add(eLabelCE, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, -1));
 
+        btnConsultarEspecie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/consultarVE.jpg"))); // NOI18N
+        btnConsultarEspecie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarEspecieActionPerformed(evt);
+            }
+        });
+        add(btnConsultarEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 170, 50));
+
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/panelEspecie.jpg"))); // NOI18N
         add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 300));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnConsultarEspecieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarEspecieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConsultarEspecieActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
-    private javax.swing.JTextField cajaEspecieCE;
+    public javax.swing.JButton btnConsultarEspecie;
+    public javax.swing.JTextField cajaEspecieCE;
     private javax.swing.JLabel eEspecieCE;
     private javax.swing.JLabel eLabelCE;
     public javax.swing.JComboBox<String> jComboBoxEspecie;
