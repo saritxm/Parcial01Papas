@@ -30,9 +30,9 @@ public class PapaDAO {
         rs = null;
     }
 
-    public void agregarPapa(Papa papa) throws SQLException{
+    public void agregarPapa(Papa papa) throws SQLException {
         String consulta = "INSERT INTO papa VALUES (?,?,?,?,?,?,?)";
-        
+
         con = (Connection) Conexion.getConexion();
         ps = con.prepareStatement(consulta);
 
@@ -47,7 +47,7 @@ public class PapaDAO {
         ps.executeUpdate();
         ps.close();
         Conexion.desconectar();
-        
+
     }
 
     public Papa consultarPapaPorNombre(String nombre) {
@@ -58,55 +58,45 @@ public class PapaDAO {
             st = con.createStatement();
             rs = st.executeQuery(consulta);
             if (rs.next()) {
-                papa = new Papa();
-                papa.setEspecie(rs.getString("especie"));
-                papa.setNombre(rs.getString("nombre"));
-                papa.setZonaP(rs.getString("zonaP"));
-                papa.setHabitoC(rs.getString("habitoC"));
-                papa.setFloracion(rs.getString("floracion"));
-                papa.setBayas(rs.getString("bayas"));
-                papa.setTuberculos(rs.getString("tuberculos"));
+                papa = new Papa(rs.getString("nombre"), rs.getString("especie"), rs.getString("zonaP"),
+                        rs.getString("habitoC"), rs.getString("floracion"), rs.getString("bayas"),
+                        rs.getString("tuberculos"));
             } else {
-                //JOptionPane con el mensaje "No se encontro ninguna papa con este nombre"
+                // JOptionPane con el mensaje "No se encontro ninguna papa con este nombre"
             }
             st.close();
             Conexion.desconectar();
         } catch (SQLException ex) {
-            //JOptionPane con el mensaje "No se pudo realizar la consulta"
+            // JOptionPane con el mensaje "No se pudo realizar la consulta"
         }
         return papa;
     }
 
-    public ArrayList<Papa> consultarPapaPorEspecie(String especie){
+    public ArrayList<Papa> consultarPapaPorEspecie(String especie) {
         ArrayList<Papa> papas = new ArrayList<>();
         Papa papa = null;
-        String consulta = "SELECT * FROM papa WHERE especie ='"+especie+"'";
+        String consulta = "SELECT * FROM papa WHERE especie ='" + especie + "'";
         try {
             con = (Connection) Conexion.getConexion();
             st = con.createStatement();
             rs = st.executeQuery(consulta);
             while (rs.next()) {
-                papa = new Papa();
-                papa.setEspecie(rs.getString("especie"));
-                papa.setNombre(rs.getString("nombre"));
-                papa.setZonaP(rs.getString("zonaP"));
-                papa.setHabitoC(rs.getString("habitoC"));
-                papa.setFloracion(rs.getString("floracion"));
-                papa.setBayas(rs.getString("bayas"));
-                papa.setTuberculos(rs.getString("tuberculos"));
+                papa = new Papa(rs.getString("nombre"), rs.getString("especie"), rs.getString("zonaP"),
+                        rs.getString("habitoC"), rs.getString("floracion"), rs.getString("bayas"),
+                        rs.getString("tuberculos"));
                 papas.add(papa);
             }
             st.close();
             Conexion.desconectar();
         } catch (SQLException ex) {
-            //JOptionPane con el mensaje "No se pudo realizar la consulta"
+            // JOptionPane con el mensaje "No se pudo realizar la consulta"
         }
         return papas;
     }
-    
-    public int consultarPapasPorZona(String zonaP){
+
+    public int consultarPapasPorZona(String zonaP) {
         int cantidadPapas = 0;
-        String consulta = "SELECT COUNT(*) AS total FROM papa WHERE zonaP = '"+zonaP+"'";
+        String consulta = "SELECT COUNT(*) AS total FROM papa WHERE zonaP = '" + zonaP + "'";
         try {
             con = (Connection) Conexion.getConexion();
             st = con.createStatement();
@@ -114,70 +104,60 @@ public class PapaDAO {
             if (rs.next()) {
                 cantidadPapas = rs.getInt("total");
             } else {
-                //JOptionPane con el mensaje "No se encontraron papas de esta especie"
+                // JOptionPane con el mensaje "No se encontraron papas de esta especie"
             }
             st.close();
             Conexion.desconectar();
         } catch (SQLException ex) {
-            //JOptionPane con el mensaje "No se pudo realizar la consulta"
+            // JOptionPane con el mensaje "No se pudo realizar la consulta"
         }
         return cantidadPapas;
     }
 
-    public ArrayList<Papa> consultarPapaPorTuberculo(String formaTuberculo){
+    public ArrayList<Papa> consultarPapaPorTuberculo(String formaTuberculo) {
         ArrayList<Papa> papas = new ArrayList<>();
         Papa papa = null;
-        String consulta = "SELECT * FROM papa WHERE tuberculos LIKE'%"+formaTuberculo+"%'";
+        String consulta = "SELECT * FROM papa WHERE tuberculos LIKE'%" + formaTuberculo + "%'";
         try {
             con = (Connection) Conexion.getConexion();
             st = con.createStatement();
             rs = st.executeQuery(consulta);
-            while(rs.next()) {
-                papa = new Papa();
-                papa.setEspecie(rs.getString("especie"));
-                papa.setNombre(rs.getString("nombre"));
-                papa.setZonaP(rs.getString("zonaP"));
-                papa.setHabitoC(rs.getString("habitoC"));
-                papa.setFloracion(rs.getString("floracion"));
-                papa.setBayas(rs.getString("bayas"));
-                papa.setTuberculos(rs.getString("tuberculos"));
+            while (rs.next()) {
+                papa = new Papa(rs.getString("nombre"), rs.getString("especie"), rs.getString("zonaP"),
+                        rs.getString("habitoC"), rs.getString("floracion"), rs.getString("bayas"),
+                        rs.getString("tuberculos"));
                 papas.add(papa);
-            } 
+            }
             st.close();
             Conexion.desconectar();
         } catch (SQLException ex) {
-            //JOptionPane con el mensaje "No se pudo realizar la consulta"
+            // JOptionPane con el mensaje "No se pudo realizar la consulta"
         }
         return papas;
     }
 
-    public ArrayList<Papa> consultarPapaPorFloracion(String colorFloracion){
+    public ArrayList<Papa> consultarPapaPorFloracion(String colorFloracion) {
         ArrayList<Papa> papas = new ArrayList<>();
         Papa papa = null;
-        String consulta = "SELECT * FROM papa WHERE floracion LIKE'%"+colorFloracion+"%'";
+        String consulta = "SELECT * FROM papa WHERE floracion LIKE'%" + colorFloracion + "%'";
         try {
             con = (Connection) Conexion.getConexion();
             st = con.createStatement();
             rs = st.executeQuery(consulta);
-            while(rs.next()) {
-                papa = new Papa();
-                papa.setEspecie(rs.getString("especie"));
-                papa.setNombre(rs.getString("nombre"));
-                papa.setZonaP(rs.getString("zonaP"));
-                papa.setHabitoC(rs.getString("habitoC"));
-                papa.setFloracion(rs.getString("floracion"));
-                papa.setBayas(rs.getString("bayas"));
-                papa.setTuberculos(rs.getString("tuberculos"));
+            while (rs.next()) {
+                papa = new Papa(rs.getString("nombre"), rs.getString("especie"), rs.getString("zonaP"),
+                        rs.getString("habitoC"), rs.getString("floracion"), rs.getString("bayas"),
+                        rs.getString("tuberculos"));
                 papas.add(papa);
-            } 
+            }
             st.close();
             Conexion.desconectar();
         } catch (SQLException ex) {
-            //JOptionPane con el mensaje "No se pudo realizar la consulta"
+            // JOptionPane con el mensaje "No se pudo realizar la consulta"
         }
         return papas;
     }
-    
+
     public void eliminarPapa(String nombre) {
         String consulta = "DELETE FROM papa WHERE nombre = ?";
 
@@ -190,14 +170,14 @@ public class PapaDAO {
             int filasEliminadas = ps.executeUpdate();
 
             if (filasEliminadas > 0) {
-                //JOptionPane con el mensaje "Papa eliminada correctamente"
+                // JOptionPane con el mensaje "Papa eliminada correctamente"
             } else {
-                //JOptionPane con el mensaje "No se encontro ninguna papa por eliminar"
+                // JOptionPane con el mensaje "No se encontro ninguna papa por eliminar"
             }
             ps.close();
             con.close();
         } catch (SQLException ex) {
-            //JOptionPane con el mensaje "Error al intentar eliminar la papa"
+            // JOptionPane con el mensaje "Error al intentar eliminar la papa"
         }
     }
 
@@ -219,15 +199,15 @@ public class PapaDAO {
             int filasActualizadas = ps.executeUpdate();
 
             if (filasActualizadas > 0) {
-                //JOptionPane con el mensaje "Papa modificada correctamente"
+                // JOptionPane con el mensaje "Papa modificada correctamente"
             } else {
-                //JOptionPane con el mensaje "No se encontro papa por modificar"
+                // JOptionPane con el mensaje "No se encontro papa por modificar"
             }
 
             ps.close();
             con.close();
         } catch (SQLException ex) {
-            //JOptionPane con el mensaje "Error al intentar modificar la papa"
+            // JOptionPane con el mensaje "Error al intentar modificar la papa"
         }
     }
 
@@ -239,14 +219,16 @@ public class PapaDAO {
             st = con.createStatement();
             rs = st.executeQuery(consulta);
             while (rs.next()) {
-                Papa papa = new Papa(rs.getString("nombre"),rs.getString("especie"),rs.getString("zonaP"),rs.getString("habitoC"),rs.getString("floracion"),rs.getString("bayas"),rs.getString("tuberculos"));
-                
+                Papa papa = new Papa(rs.getString("nombre"), rs.getString("especie"), rs.getString("zonaP"),
+                        rs.getString("habitoC"), rs.getString("floracion"), rs.getString("bayas"),
+                        rs.getString("tuberculos"));
+
                 papas.add(papa);
             }
             st.close();
             Conexion.desconectar();
         } catch (SQLException ex) {
-            //JOptionPne con el mensaje "No se pudo realizar la consulta"
+            // JOptionPne con el mensaje "No se pudo realizar la consulta"
         }
         return papas;
     }

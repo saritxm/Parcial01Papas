@@ -27,21 +27,15 @@ public class PanelZonas extends javax.swing.JPanel {
     private void initComponents() {
 
         ZonasCZ = new javax.swing.ButtonGroup();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TextAreaCZ = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         bNariñoCZ = new javax.swing.JRadioButton();
         bBoyacaCZ = new javax.swing.JRadioButton();
         bCundinamarcaCZ = new javax.swing.JRadioButton();
+        jLabel2 = new javax.swing.JLabel();
+        cajaNumeroPapasCFL = new javax.swing.JTextField();
         Fondo = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        TextAreaCZ.setColumns(20);
-        TextAreaCZ.setRows(5);
-        jScrollPane1.setViewportView(TextAreaCZ);
-
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 370, 200));
 
         jLabel1.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -63,6 +57,13 @@ public class PanelZonas extends javax.swing.JPanel {
         bCundinamarcaCZ.setText("Cundinamarca");
         add(bCundinamarcaCZ, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 40, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        jLabel2.setText("Número de papas");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
+
+        cajaNumeroPapasCFL.setEnabled(false);
+        add(cajaNumeroPapasCFL, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 240, -1));
+
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/panelZonas.jpg"))); // NOI18N
         add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 300));
     }// </editor-fold>//GEN-END:initComponents
@@ -70,12 +71,12 @@ public class PanelZonas extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
-    private javax.swing.JTextArea TextAreaCZ;
     private javax.swing.ButtonGroup ZonasCZ;
     public javax.swing.JRadioButton bBoyacaCZ;
     public javax.swing.JRadioButton bCundinamarcaCZ;
     public javax.swing.JRadioButton bNariñoCZ;
+    public javax.swing.JTextField cajaNumeroPapasCFL;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

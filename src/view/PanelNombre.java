@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Sara
@@ -152,4 +154,7 @@ public class PanelNombre extends javax.swing.JPanel {
     private javax.swing.JLabel eTuberculosCN;
     private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
+    public void noHay() {
+        JOptionPane.showMessageDialog(null, "No hay papas con este nombre", "NO HAY", JOptionPane.INFORMATION_MESSAGE);
+    }
 }

@@ -160,7 +160,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         PMenu.add(pMenuE, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
         PMenu.revalidate();
         PMenu.repaint();
-        setVisible(true);
     }
 
     public void showConsultar(){

@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Sara
@@ -168,4 +170,19 @@ public class VentanaP extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.ButtonGroup zonasP;
     // End of variables declaration//GEN-END:variables
+
+    public void camposVacios(){
+        JOptionPane.showMessageDialog(null, "Llene todos lo campos por favor", "CAMPOS VACIOS", JOptionPane.ERROR_MESSAGE);
+    }
+
+    public void limpiar(){
+        cajaBayasP.setText("");
+        cajaEspecieP.setText("");
+        cajaFloracionP.setText("");
+        cajaHabitoP.setText("");
+        cajaNombreP.setText("");
+        cajaTuberculosP.setText("");
+        zonasP.setSelected(zonasP.getSelection(), false);
+        
+    }
 }

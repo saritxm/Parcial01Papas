@@ -59,9 +59,5 @@ public class ArchivosProp {
             papa.agregarPapa(p);
         }
     }
-    public void imprimirPapas(){
-        for(Papa i : papasCargadas){
-            System.out.println(i.toString());
-        }
-    }
+    
 }

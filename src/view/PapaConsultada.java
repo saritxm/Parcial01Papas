@@ -8,12 +8,12 @@ package view;
  *
  * @author Sara
  */
-public class VentanaP extends javax.swing.JFrame {
+public class PapaConsultada extends javax.swing.JFrame {
 
     /**
      * Creates new form VentanaP
      */
-    public VentanaP() {
+    public PapaConsultada() {
         initComponents();
     }
 
@@ -44,7 +44,7 @@ public class VentanaP extends javax.swing.JFrame {
         bNariñoP = new javax.swing.JRadioButton();
         bBoyacaP = new javax.swing.JRadioButton();
         bCundinamarcaP = new javax.swing.JRadioButton();
-        btnSiguienteP = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         FondoP = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -122,8 +122,9 @@ public class VentanaP extends javax.swing.JFrame {
         bCundinamarcaP.setText("Cundinamarca");
         jPanel1.add(bCundinamarcaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, -1, -1));
 
-        btnSiguienteP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btnSiguiente.jpg"))); // NOI18N
-        jPanel1.add(btnSiguienteP, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 390, 130, 40));
+        jButton1.setActionCommand("");
+        jButton1.setLabel("VOLVER");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 360, -1, -1));
 
         FondoP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/VentanaProperties.jpg"))); // NOI18N
         jPanel1.add(FondoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 460));
@@ -151,7 +152,6 @@ public class VentanaP extends javax.swing.JFrame {
     public javax.swing.JRadioButton bBoyacaP;
     public javax.swing.JRadioButton bCundinamarcaP;
     public javax.swing.JRadioButton bNariñoP;
-    public javax.swing.JButton btnSiguienteP;
     public javax.swing.JTextField cajaBayasP;
     public javax.swing.JTextField cajaEspecieP;
     public javax.swing.JTextField cajaFloracionP;
@@ -165,7 +165,8 @@ public class VentanaP extends javax.swing.JFrame {
     private javax.swing.JLabel eNombreP;
     private javax.swing.JLabel eTuberculosP;
     private javax.swing.JLabel eZonasP;
+    public javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.ButtonGroup zonasP;
+    public javax.swing.ButtonGroup zonasP;
     // End of variables declaration//GEN-END:variables
 }
