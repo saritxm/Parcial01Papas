@@ -359,11 +359,9 @@ public class Gestor implements ActionListener {
             editarPapa();
         }
         else if (e.getSource() == vPrincipal.getpEditar().btnEliminarE) {
-            try {
-                papaDao.eliminarPapa(papasCargadas.get(vPrincipal.getpEditar().jComboBoxpEditar.getSelectedIndex()).getNombre());
-            } catch (SQLException e2) {
-                vPrincipal.getpEditar().errorEliminar();
-            }
+            
+            papaDao.eliminarPapa(papasCargadas.get(vPrincipal.getpEditar().jComboBoxpEditar.getSelectedIndex()).getNombre());
+            
             
             vPrincipal.getpEditar().eliminada();
             cargar();
