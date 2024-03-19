@@ -95,6 +95,7 @@ public class PapaDAO {
                 papa.setBayas(rs.getString("bayas"));
                 papa.setTuberculos(rs.getString("tuberculos"));
                 papas.add(papa);
+            }
             st.close();
             Conexion.desconectar();
         } catch (SQLException ex) {
