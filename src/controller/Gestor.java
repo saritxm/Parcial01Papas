@@ -219,8 +219,6 @@ public class Gestor implements ActionListener {
         }
     }
 
-
-
     // Consulta por espacie
     private void consultarPorEspecie(String x) {
         this.vPrincipal.pConsultar.pEspecie.jComboBoxEspecie.removeAllItems();
@@ -344,6 +342,8 @@ public class Gestor implements ActionListener {
             // Insertar una papa
         } else if (e.getSource() == vPrincipal.getpInsertar().btnInsertarI) {
             insertarPapa();
+        } else if(e.getSource() == vPrincipal.getpInsertar().btnLimpiarI){
+            vPrincipal.getpInsertar().limpiar();
         }
         // Panel Consultar
         else if (e.getSource() == this.vPrincipal.pConsultar.btnSNombre) {

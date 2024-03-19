@@ -192,4 +192,15 @@ public class PanelInsertar extends javax.swing.JPanel {
     public void papaRepetida() {
         JOptionPane.showMessageDialog(null, "Ya existe una papa con este nombre", "ERROR EN EL INGRESO", JOptionPane.ERROR_MESSAGE);
     }
+    public void limpiar(){
+        cajaBayas.setText("");
+        cajaEspecie.setText("");
+        cajaFloracion.setText("");
+        cajaHabito.setText("");
+        cajaNombre.setText("");
+        cajaTuberculos.setText("");
+        zonas.setSelected(zonas.getSelection(), false);
+        
+    }
+
 }
