@@ -87,6 +87,8 @@ public class PanelEditar extends javax.swing.JPanel {
         eTuberculosE.setForeground(new java.awt.Color(255, 255, 255));
         eTuberculosE.setText("Tubérculos");
         add(eTuberculosE, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
+
+        cajaNombreE.setEditable(false);
         add(cajaNombreE, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 180, -1));
         add(cajaEspecieE, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 180, -1));
         add(cajaHabitoE, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 180, -1));
