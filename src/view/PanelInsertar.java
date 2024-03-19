@@ -128,19 +128,16 @@ public class PanelInsertar extends javax.swing.JPanel {
 
         zonas.add(bNariñoI);
         bNariñoI.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
-        bNariñoI.setForeground(new java.awt.Color(204, 255, 204));
         bNariñoI.setText("Nariño");
         add(bNariñoI, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, -1, -1));
 
         zonas.add(bBoyacaI);
         bBoyacaI.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
-        bBoyacaI.setForeground(new java.awt.Color(204, 255, 204));
         bBoyacaI.setText("Boyacá ");
         add(bBoyacaI, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, -1, -1));
 
         zonas.add(bCundinamarcaI);
         bCundinamarcaI.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
-        bCundinamarcaI.setForeground(new java.awt.Color(204, 255, 204));
         bCundinamarcaI.setText("Cundinamarca");
         add(bCundinamarcaI, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, -1, -1));
 

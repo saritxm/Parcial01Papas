@@ -19,6 +19,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public PanelMenu pMenuE;
     public PanelConsultar pConsultar;
     public PanelVer pVer;
+    public PanelEditar pEditar;
 
     public PanelInsertar getpInsertar() {
         return pInsertar;
@@ -181,6 +182,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pInsertar.setLocation(0, 0);
         PPrincipal.removeAll();
         PPrincipal.add(pInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
+        PPrincipal.revalidate();
+        PPrincipal.repaint();
+    }
+    public void showEditar(){
+        pEditar.setSize(682, 372);
+        pEditar.setLocation(0, 0);
+        PPrincipal.removeAll();
+        PPrincipal.add(pEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
         PPrincipal.revalidate();
         PPrincipal.repaint();
     }

@@ -13,7 +13,42 @@ public class PanelConsultar extends javax.swing.JPanel {
     /**
      * Creates new form PanelConsultarE
      */
+    
+    public PanelNombre pNombre;
+    public PanelEspecie pEspecie;
+    public PanelZonas pZonas;
+    public PanelForma pForma;
+    public PanelFloracion pFloracion;
+    
+    public PanelNombre getpNombre() {
+        return pNombre;
+    }
+
+    public PanelEspecie getpEspecie() {
+        return pEspecie;
+    }
+
+    public PanelZonas getpZonas() {
+        return pZonas;
+    }
+
+    public PanelForma getpForma() {
+        return pForma;
+    }
+
+    public PanelFloracion getpFloracion() {
+        return pFloracion;
+    }
+
+    
     public PanelConsultar() {
+
+        pNombre= new PanelNombre();
+        pEspecie = new PanelEspecie();
+        pZonas = new PanelZonas();
+        pForma = new PanelForma();
+        pFloracion = new PanelFloracion();
+        
         initComponents();
     }
 
@@ -29,13 +64,13 @@ public class PanelConsultar extends javax.swing.JPanel {
         ZonasC = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnSNombre = new javax.swing.JButton();
+        btnSEspecie = new javax.swing.JButton();
+        btnSZona = new javax.swing.JButton();
+        btnSForma = new javax.swing.JButton();
+        btnSFloracion = new javax.swing.JButton();
         Fondo1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        PanelCambios = new javax.swing.JPanel();
         Fondo = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -47,65 +82,106 @@ public class PanelConsultar extends javax.swing.JPanel {
         jLabel1.setText("Realizar la consulta:");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 255));
-        jButton1.setFont(new java.awt.Font("Sylfaen", 0, 14)); // NOI18N
-        jButton1.setText("Según nombre");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 120, -1));
+        btnSNombre.setBackground(new java.awt.Color(204, 204, 255));
+        btnSNombre.setFont(new java.awt.Font("Sylfaen", 0, 14)); // NOI18N
+        btnSNombre.setText("Según nombre");
+        jPanel1.add(btnSNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 120, -1));
 
-        jButton2.setBackground(new java.awt.Color(250, 229, 208));
-        jButton2.setFont(new java.awt.Font("Sylfaen", 0, 14)); // NOI18N
-        jButton2.setText("Según Especie");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnSEspecie.setBackground(new java.awt.Color(250, 229, 208));
+        btnSEspecie.setFont(new java.awt.Font("Sylfaen", 0, 14)); // NOI18N
+        btnSEspecie.setText("Según Especie");
+        btnSEspecie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnSEspecieActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 110, -1));
+        jPanel1.add(btnSEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 120, -1));
 
-        jButton3.setBackground(new java.awt.Color(204, 255, 204));
-        jButton3.setFont(new java.awt.Font("Sylfaen", 0, 14)); // NOI18N
-        jButton3.setText("Según Zona");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 100, -1));
+        btnSZona.setBackground(new java.awt.Color(204, 255, 204));
+        btnSZona.setFont(new java.awt.Font("Sylfaen", 0, 14)); // NOI18N
+        btnSZona.setText("Según Zona");
+        jPanel1.add(btnSZona, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 110, -1));
 
-        jButton4.setBackground(new java.awt.Color(153, 204, 255));
-        jButton4.setFont(new java.awt.Font("Sylfaen", 0, 14)); // NOI18N
-        jButton4.setText("Según la forma");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 120, -1));
+        btnSForma.setBackground(new java.awt.Color(153, 204, 255));
+        btnSForma.setFont(new java.awt.Font("Sylfaen", 0, 14)); // NOI18N
+        btnSForma.setText("Según la forma");
+        jPanel1.add(btnSForma, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, 130, -1));
 
-        jButton5.setBackground(new java.awt.Color(255, 255, 153));
-        jButton5.setFont(new java.awt.Font("Sylfaen", 0, 14)); // NOI18N
-        jButton5.setText("Según Floración");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 140, -1));
+        btnSFloracion.setBackground(new java.awt.Color(255, 255, 153));
+        btnSFloracion.setFont(new java.awt.Font("Sylfaen", 0, 14)); // NOI18N
+        btnSFloracion.setText("Según Floración");
+        jPanel1.add(btnSFloracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 140, -1));
 
         Fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Panelconsultas.jpg"))); // NOI18N
-        jPanel1.add(Fondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 90));
+        jPanel1.add(Fondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 80));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 90));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, -1));
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0, 0));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 680, 380));
+        PanelCambios.setBackground(new java.awt.Color(0, 0, 0, 0));
+        PanelCambios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(PanelCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 680, 300));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/PanelC.jpg"))); // NOI18N
-        add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 94, 680, 370));
+        add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 690, 310));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnSEspecieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSEspecieActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnSEspecieActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel Fondo1;
+    private javax.swing.JPanel PanelCambios;
     private javax.swing.ButtonGroup ZonasC;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    public javax.swing.JButton btnSEspecie;
+    public javax.swing.JButton btnSFloracion;
+    public javax.swing.JButton btnSForma;
+    public javax.swing.JButton btnSNombre;
+    public javax.swing.JButton btnSZona;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+
+    public void showNombre(){
+        pNombre.setSize(680, 300);
+        pNombre.setLocation(0, 0);
+        PanelCambios.removeAll();
+        PanelCambios.add(pNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
+        PanelCambios.revalidate();
+        PanelCambios.repaint();
+    }
+    public void showEspecie(){
+        pEspecie.setSize(680, 300);
+        pEspecie.setLocation(0, 0);
+        PanelCambios.removeAll();
+        PanelCambios.add(pEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
+        PanelCambios.revalidate();
+        PanelCambios.repaint();
+    }
+    public void showZonas(){
+        pZonas.setSize(680, 300);
+        pZonas.setLocation(0, 0);
+        PanelCambios.removeAll();
+        PanelCambios.add(pZonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
+        PanelCambios.revalidate();
+        PanelCambios.repaint();
+    }
+    public void showForma(){
+        pForma.setSize(680, 300);
+        pForma.setLocation(0, 0);
+        PanelCambios.removeAll();
+        PanelCambios.add(pForma, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
+        PanelCambios.revalidate();
+        PanelCambios.repaint();
+    }
+    public void showFloracion(){
+        pFloracion.setSize(680, 300);
+        pFloracion.setLocation(0, 0);
+        PanelCambios.removeAll();
+        PanelCambios.add(pFloracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
+        PanelCambios.revalidate();
+        PanelCambios.repaint();
+    }
 }

@@ -26,19 +26,36 @@ public class PanelEspecie extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        eEspecieCE = new javax.swing.JLabel();
+        cajaEspecieCE = new javax.swing.JTextField();
+        jComboBoxEspecie = new javax.swing.JComboBox<>();
+        eLabelCE = new javax.swing.JLabel();
+        Fondo = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        eEspecieCE.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        eEspecieCE.setText("Especie");
+        add(eEspecieCE, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+        add(cajaEspecieCE, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 200, -1));
+
+        jComboBoxEspecie.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(jComboBoxEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, 190, -1));
+
+        eLabelCE.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        eLabelCE.setText("Papas");
+        add(eLabelCE, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, -1));
+
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/panelEspecie.jpg"))); // NOI18N
+        add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 300));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Fondo;
+    private javax.swing.JTextField cajaEspecieCE;
+    private javax.swing.JLabel eEspecieCE;
+    private javax.swing.JLabel eLabelCE;
+    public javax.swing.JComboBox<String> jComboBoxEspecie;
     // End of variables declaration//GEN-END:variables
 }

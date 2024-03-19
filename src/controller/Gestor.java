@@ -37,13 +37,33 @@ public class Gestor implements ActionListener {
         // Instanciacion de los paneles
 
         // Escucha a los botones y radioButtons
+        this.vPrincipal.getpConsultar().btnSNombre.addActionListener(this);
+        this.vPrincipal.getpConsultar().btnSEspecie.addActionListener(this);
+        this.vPrincipal.getpConsultar().btnSZona.addActionListener(this);
+        this.vPrincipal.getpConsultar().btnSForma.addActionListener(this);
+        this.vPrincipal.getpConsultar().btnSFloracion.addActionListener(this);
 
         this.vPrincipal.getpInsertar().btnLimpiarI.addActionListener(this);
         this.vPrincipal.getpInsertar().btnInsertarI.addActionListener(this);
         this.vPrincipal.getpInsertar().bNariñoI.addActionListener(this);
         this.vPrincipal.getpInsertar().bBoyacaI.addActionListener(this);
         this.vPrincipal.getpInsertar().bCundinamarcaI.addActionListener(this);
+        
+        //Escucha a los botones y radio buttons de los paneles especificos 
+        //Panel Nombre
+        this.vPrincipal.getpConsultar().pNombre.btnConsultarCN.addActionListener(this);
+        this.vPrincipal.getpConsultar().pNombre.bNariñoCN.addActionListener(this);
+        this.vPrincipal.getpConsultar().pNombre.bBoyacaCN.addActionListener(this);
+        this.vPrincipal.getpConsultar().pNombre.bCundinamarcaCN.addActionListener(this);
 
+        this.vPrincipal.getpConsultar().pEspecie.jComboBoxEspecie.addActionListener(this);
+        //Panel Zonas
+        this.vPrincipal.getpConsultar().pZonas.bNariñoCZ.addActionListener(this);
+        this.vPrincipal.getpConsultar().pZonas.bBoyacaCZ.addActionListener(this);
+        this.vPrincipal.getpConsultar().pZonas.bCundinamarcaCZ.addActionListener(this);
+
+        this.vPrincipal.getpConsultar().pForma.jComboBoxPapasCF.addActionListener(this);
+        
         this.vPrincipal.getpMenu().getBtnConsultarM().addActionListener(this);
         this.vPrincipal.getpMenu().getBtnInsertarM().addActionListener(this);
         this.vPrincipal.getpMenu().getBtnVerM().addActionListener(this);
@@ -107,13 +127,13 @@ public class Gestor implements ActionListener {
                 p.setZonaP("Cundinamarca");
             else if (this.vPrincipal.getpInsertar().bBoyacaI.isSelected())
                 p.setZonaP("Boyaca");
-    
+
             papaDao.agregarPapa(p);
             papasCargadas = new ArrayList<>(papaDao.listaDePapas());
             vPrincipal.getpInsertar().papaIngresada();
         } catch (NullPointerException e) {
             vPrincipal.getpInsertar().camposVacios();
-        } catch (SQLException e2){
+        } catch (SQLException e2) {
             vPrincipal.getpInsertar().papaRepetida();
         }
     }
@@ -140,9 +160,22 @@ public class Gestor implements ActionListener {
         } else if (e.getSource() == this.vPrincipal.getpVer().jComboBoxV) {
             try {
                 asigancionVerAll();
-            } catch (Exception e2){}
-        }else if (e.getSource()==vPrincipal.getpInsertar().btnInsertarI){
+            } catch (Exception e2) {
+            }
+        } else if (e.getSource() == vPrincipal.getpInsertar().btnInsertarI) {
             insertarPapa();
+
+            // Panel Consultar
+        } else if (e.getSource() == this.vPrincipal.pConsultar.btnSNombre) {
+            this.vPrincipal.pConsultar.showNombre();
+        } else if (e.getSource() == this.vPrincipal.pConsultar.btnSEspecie) {
+            this.vPrincipal.pConsultar.showEspecie();
+        } else if (e.getSource() == this.vPrincipal.pConsultar.btnSZona) {
+            this.vPrincipal.pConsultar.showZonas();
+        } else if (e.getSource() == this.vPrincipal.pConsultar.btnSForma) {
+            this.vPrincipal.pConsultar.showForma();
+        } else if (e.getSource() == this.vPrincipal.pConsultar.btnSFloracion) {
+            this.vPrincipal.pConsultar.showFloracion();
         }
     }
 }
