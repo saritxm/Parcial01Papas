@@ -38,7 +38,6 @@ public class Gestor implements ActionListener {
        
        this.vPrincipal.getpConsultar().btnGuardarC.addActionListener(this);
        
-
        this.vPrincipal.getpConsultar().bNariñoC.addActionListener(this);
        this.vPrincipal.getpConsultar().bBoyacaC.addActionListener(this);
        this.vPrincipal.getpConsultar().bCundinamarcaC.addActionListener(this);
@@ -54,6 +53,7 @@ public class Gestor implements ActionListener {
         this.vPrincipal.getpMenu().getBtnInsertarM().addActionListener(this);
         this.vPrincipal.getpMenu().getBtnVerM().addActionListener(this);
         this.vPrincipal.getpMenu().getBtnSalirGeneral().addActionListener(this);
+        this.vPrincipal.getpMenu().getBtnEditarM().addActionListener(this);
 
         this.vPrincipal.getpVer().jComboBoxV.addActionListener(this);
 
