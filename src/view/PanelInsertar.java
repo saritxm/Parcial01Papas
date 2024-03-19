@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Sara
@@ -165,12 +167,12 @@ public class PanelInsertar extends javax.swing.JPanel {
     public javax.swing.JRadioButton bNariñoI;
     public javax.swing.JButton btnInsertarI;
     public javax.swing.JButton btnLimpiarI;
-    private javax.swing.JTextField cajaBayas;
-    private javax.swing.JTextField cajaEspecie;
-    private javax.swing.JTextField cajaFloracion;
-    private javax.swing.JTextField cajaHabito;
-    private javax.swing.JTextField cajaNombre;
-    private javax.swing.JTextField cajaTuberculos;
+    public javax.swing.JTextField cajaBayas;
+    public javax.swing.JTextField cajaEspecie;
+    public javax.swing.JTextField cajaFloracion;
+    public javax.swing.JTextField cajaHabito;
+    public javax.swing.JTextField cajaNombre;
+    public javax.swing.JTextField cajaTuberculos;
     private javax.swing.JLabel eBayasI;
     private javax.swing.JLabel eEspecieI;
     private javax.swing.JLabel eFloracionI;
@@ -181,4 +183,16 @@ public class PanelInsertar extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.ButtonGroup zonas;
     // End of variables declaration//GEN-END:variables
+
+    public void camposVacios(){
+        JOptionPane.showMessageDialog(null, "Llene todos lo campos por favor", "CAMPOS VACIOS", JOptionPane.ERROR_MESSAGE);
+    }
+
+    public void papaIngresada() {
+        JOptionPane.showMessageDialog(null, "Papa insertada con exito", "PAPA INGRESADA", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void papaRepetida() {
+        JOptionPane.showMessageDialog(null, "Ya existe una papa con este nombre", "ERROR EN EL INGRESO", JOptionPane.ERROR_MESSAGE);
+    }
 }

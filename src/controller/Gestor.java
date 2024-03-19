@@ -12,48 +12,47 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.sql.SQLException;
 
 import model.ArchivosProp;
 import model.Papa;
 import view.VentanaP;
 import view.VentanaPrincipal;
+
 public class Gestor implements ActionListener {
 
     private PapaDAO papaDao;
     private ArchivosProp ar = new ArchivosProp();
     private ArrayList<Papa> papasCargadas;
-    
+
     private VentanaPrincipal vPrincipal;
     private VentanaP vProperties;
 
     public Gestor() {
-        
-       //Instanciación de la vista 
-       this.vPrincipal = new VentanaPrincipal();
-       this.vProperties = new VentanaP();
-       this.papaDao = new PapaDAO();
-       //Instanciacion de los paneles 
 
-       //Escucha a los botones y radioButtons
-       
-       this.vPrincipal.getpConsultar().btnGuardarC.addActionListener(this);
-       
-       this.vPrincipal.getpConsultar().bNariñoC.addActionListener(this);
-       this.vPrincipal.getpConsultar().bBoyacaC.addActionListener(this);
-       this.vPrincipal.getpConsultar().bCundinamarcaC.addActionListener(this);
-        
+        // Instanciación de la vista
+        this.vPrincipal = new VentanaPrincipal();
+        this.vProperties = new VentanaP();
+        this.papaDao = new PapaDAO();
+        // Instanciacion de los paneles
+
+        // Escucha a los botones y radioButtons
+
+        this.vPrincipal.getpConsultar().btnGuardarC.addActionListener(this);
+        this.vPrincipal.getpConsultar().bNariñoC.addActionListener(this);
+        this.vPrincipal.getpConsultar().bBoyacaC.addActionListener(this);
+        this.vPrincipal.getpConsultar().bCundinamarcaC.addActionListener(this);
+
         this.vPrincipal.getpInsertar().btnLimpiarI.addActionListener(this);
         this.vPrincipal.getpInsertar().btnInsertarI.addActionListener(this);
-
         this.vPrincipal.getpInsertar().bNariñoI.addActionListener(this);
         this.vPrincipal.getpInsertar().bBoyacaI.addActionListener(this);
         this.vPrincipal.getpInsertar().bCundinamarcaI.addActionListener(this);
-        
+
         this.vPrincipal.getpMenu().getBtnConsultarM().addActionListener(this);
         this.vPrincipal.getpMenu().getBtnInsertarM().addActionListener(this);
         this.vPrincipal.getpMenu().getBtnVerM().addActionListener(this);
         this.vPrincipal.getpMenu().getBtnSalirGeneral().addActionListener(this);
-        
         this.vPrincipal.getpMenu().getBtnEditarM().addActionListener(this);
 
         this.vPrincipal.getpVer().jComboBoxV.addActionListener(this);
@@ -69,17 +68,17 @@ public class Gestor implements ActionListener {
     }
 
     private void obtenerRegistrosPapa() {
-       try {
-         this.vPrincipal.getpVer().jComboBoxV.removeAllItems();
-         for(Papa i : papasCargadas){
-             this.vPrincipal.getpVer().jComboBoxV.addItem(i.getNombre());
-         }    
-       } catch (Exception e) {
-        // TODO: handle exception
-       } 
+        try {
+            this.vPrincipal.getpVer().jComboBoxV.removeAllItems();
+            for (Papa i : papasCargadas) {
+                this.vPrincipal.getpVer().jComboBoxV.addItem(i.getNombre());
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
 
-    private void asigancionVerAll(){
+    private void asigancionVerAll() {
         this.vPrincipal.getpVer().radioZonas.setSelected(this.vPrincipal.getpVer().radioZonas.getSelection(), false);
         Papa p = papasCargadas.get(vPrincipal.getpVer().jComboBoxV.getSelectedIndex());
         this.vPrincipal.getpVer().cajaNombreV.setText(p.getNombre());
@@ -88,65 +87,78 @@ public class Gestor implements ActionListener {
         this.vPrincipal.getpVer().cajaFloracionV.setText(p.getFloracion());
         this.vPrincipal.getpVer().cajaTuberculosV.setText(p.getTuberculos());
         this.vPrincipal.getpVer().cajaHabitoV.setText(p.getHabitoC());
-        if(p.getZonaP().equals("NariÃ±o")) this.vPrincipal.getpVer().bNariñoV.setSelected(true);
-        else if (p.getZonaP().equals("Cundinamarca"))this.vPrincipal.getpVer().bCundinamarcaV.setSelected(true);
-        else if (p.getZonaP().equals("Boyaca"))this.vPrincipal.getpVer().bBoyacaV.setSelected(true);
+        if (p.getZonaP().equals("NariÃ±o"))
+            this.vPrincipal.getpVer().bNariñoV.setSelected(true);
+        else if (p.getZonaP().equals("Cundinamarca"))
+            this.vPrincipal.getpVer().bCundinamarcaV.setSelected(true);
+        else if (p.getZonaP().equals("Boyaca"))
+            this.vPrincipal.getpVer().bBoyacaV.setSelected(true);
     }
 
-    private void consultarPapa(Papa p) {
-        
-        Papa papaLocalizada = papaDao.consultarPapa(p);
-        if (papaLocalizada != null) {
-            System.out.println("**************** Papa consultada *************************");
-            System.out.println("Nombre Papa: " + papaLocalizada.getNombre());
-            System.out.println("Especie Papa: " + papaLocalizada.getEspecie());
-            System.out.println("ZonaP papa : " + papaLocalizada.getZonaP());
-            System.out.println("*************************************************\n");
-
-        } else {
-            System.out.println("No existen una papa como la entregada");
+    // Estoy en el baño, ya vengo
+    // <----------------------------------------------------------
+    private void insertarPapa() {
+        try {
+            Papa p = new Papa();
+            p.setNombre(vPrincipal.getpInsertar().cajaNombre.getText());
+            p.setEspecie(vPrincipal.getpInsertar().cajaEspecie.getText());
+            p.setBayas(vPrincipal.getpInsertar().cajaBayas.getText());
+            p.setHabitoC(vPrincipal.getpInsertar().cajaHabito.getText());
+            p.setFloracion(vPrincipal.getpInsertar().cajaFloracion.getText());
+            p.setTuberculos(vPrincipal.getpInsertar().cajaTuberculos.getText());
+            if (this.vPrincipal.getpInsertar().bNariñoI.isSelected())
+                p.setZonaP("NariÃ±o");
+            else if (this.vPrincipal.getpInsertar().bCundinamarcaI.isSelected())
+                p.setZonaP("Cundinamarca");
+            else if (this.vPrincipal.getpInsertar().bBoyacaI.isSelected())
+                p.setZonaP("Boyaca");
+    
+            papaDao.agregarPapa(p);
+            papasCargadas = new ArrayList<>(papaDao.listaDePapas());
+            vPrincipal.getpInsertar().papaIngresada();
+        } catch (NullPointerException e) {
+            vPrincipal.getpInsertar().camposVacios();
+        } catch (SQLException e2){
+            vPrincipal.getpInsertar().papaRepetida();
         }
     }
-    
-    private void modificarPapa(Papa p){
-        papaDao = new PapaDAO();
+
+    private void modificarPapa(Papa p) {
+
         papaDao.modificarPapa(p);
     }
-    
-    private void eliminarPapa(Papa p){
+
+    private void eliminarPapa(Papa p) {
         papaDao = new PapaDAO();
         papaDao.eliminarPapa(p);
     }
-    
-    private void cargar(){
-        ar.setProp(new File("data/preload.properties"));
-        ar.cargarPapas();
-        ar.guardarPapas();
-    }
 
-    private void initialize(){
+    //private void cargar() {
+    //    ar.setProp(new File("data/preload.properties"));
+    //    ar.cargarPapas();
+     //   ar.guardarPapas();
+    //}
+
+    private void initialize() {
         vPrincipal.setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == this.vPrincipal.pMenuE.btnConsultarM){
+        if (e.getSource() == this.vPrincipal.pMenuE.btnConsultarM) {
             this.vPrincipal.showConsultar();
-            
-        }
-        else if(e.getSource() == this.vPrincipal.pMenuE.btnInsertarM){
+
+        } else if (e.getSource() == this.vPrincipal.pMenuE.btnInsertarM) {
             this.vPrincipal.showInsertar();
-        }
-        else if(e.getSource() == this.vPrincipal.pMenuE.btnVerM){
+        } else if (e.getSource() == this.vPrincipal.pMenuE.btnVerM) {
             obtenerRegistrosPapa();
-            this.vPrincipal.showVer();        
-        }
-        else if(e.getSource() == this.vPrincipal.getpVer().jComboBoxV){
+            this.vPrincipal.showVer();
+        } else if (e.getSource() == this.vPrincipal.getpVer().jComboBoxV) {
             try {
                 asigancionVerAll();
-            } catch (Exception e2) {
-                
-            }
+            } catch (Exception e2){}
+        }else if (e.getSource()==vPrincipal.getpInsertar().btnInsertarI){
+            insertarPapa();
         }
     }
 }

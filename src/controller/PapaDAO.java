@@ -30,26 +30,24 @@ public class PapaDAO {
         rs = null;
     }
 
-    public void agregarPapa(Papa papa) {
+    public void agregarPapa(Papa papa) throws SQLException{
         String consulta = "INSERT INTO papa VALUES (?,?,?,?,?,?,?)";
-        try {
-            con = (Connection) Conexion.getConexion();
-            ps = con.prepareStatement(consulta);
+        
+        con = (Connection) Conexion.getConexion();
+        ps = con.prepareStatement(consulta);
 
-            ps.setString(1, papa.getNombre());
-            ps.setString(2, papa.getEspecie());
-            ps.setString(3, papa.getZonaP());
-            ps.setString(4, papa.getHabitoC());
-            ps.setString(5, papa.getFloracion());
-            ps.setString(6, papa.getBayas());
-            ps.setString(7, papa.getTuberculos());
+        ps.setString(1, papa.getNombre());
+        ps.setString(2, papa.getEspecie());
+        ps.setString(3, papa.getZonaP());
+        ps.setString(4, papa.getHabitoC());
+        ps.setString(5, papa.getFloracion());
+        ps.setString(6, papa.getBayas());
+        ps.setString(7, papa.getTuberculos());
 
-            ps.executeUpdate();
-            ps.close();
-            Conexion.desconectar();
-        } catch (SQLException e) {
-            System.out.println("No se pueden agregar elementos, verifique que ninguno se repita o que el elmento ya este en la base de datos");
-        }
+        ps.executeUpdate();
+        ps.close();
+        Conexion.desconectar();
+        
     }
 
     public Papa consultarPapa(Papa p) {
@@ -140,10 +138,8 @@ public class PapaDAO {
             st = con.createStatement();
             rs = st.executeQuery(consulta);
             while (rs.next()) {
-                Papa papa = new Papa();
-                papa.setEspecie(rs.getString("especie"));
-                papa.setNombre(rs.getString("nombre"));
-                papa.setZonaP(rs.getString("zonaP"));
+                Papa papa = new Papa(rs.getString("nombre"),rs.getString("especie"),rs.getString("zonaP"),rs.getString("habitoC"),rs.getString("floracion"),rs.getString("bayas"),rs.getString("tuberculos"));
+                
                 papas.add(papa);
             }
             st.close();

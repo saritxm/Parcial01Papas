@@ -3,6 +3,7 @@ package model;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Properties;
 
@@ -53,7 +54,7 @@ public class ArchivosProp {
         } catch (Exception e) {
         }
     }
-    public void guardarPapas(){
+    public void guardarPapas() throws SQLException{
         for(Papa p: papasCargadas){
             papa.agregarPapa(p);
         }

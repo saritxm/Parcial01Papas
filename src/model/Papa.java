@@ -14,7 +14,8 @@ public class Papa {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if(nombre.isBlank()) throw new NullPointerException();
+        else this.nombre = nombre;
     }
 
     public String getEspecie() {
@@ -22,7 +23,8 @@ public class Papa {
     }
 
     public void setEspecie(String especie) {
-        this.especie = especie;
+        if(especie.isBlank()) throw new NullPointerException();
+        else this.especie = especie;
     }
 
     public String getZonaP() {
@@ -30,7 +32,8 @@ public class Papa {
     }
 
     public void setZonaP(String zonaP) {
-        this.zonaP = zonaP;
+        if(zonaP.isBlank()) throw new NullPointerException();
+        else this.zonaP = zonaP;
     }
 
     public String getHabitoC() {
@@ -38,7 +41,8 @@ public class Papa {
     }
 
     public void setHabitoC(String habitoC) {
-        this.habitoC = habitoC;
+        if(habitoC.isBlank()) throw new NullPointerException();
+        else this.habitoC = habitoC;
     }
 
     public String getFloracion() {
@@ -46,7 +50,8 @@ public class Papa {
     }
 
     public void setFloracion(String floracion) {
-        this.floracion = floracion;
+        if(floracion.isBlank()) throw new NullPointerException();
+        else this.floracion = floracion;
     }
 
     public String getBayas() {
@@ -54,7 +59,8 @@ public class Papa {
     }
 
     public void setBayas(String bayas) {
-        this.bayas = bayas;
+        if(bayas.isBlank())throw new NullPointerException();
+        else this.bayas = bayas;
     }
 
     public String getTuberculos() {
@@ -62,7 +68,8 @@ public class Papa {
     }
 
     public void setTuberculos(String tuberculos) {
-        this.tuberculos = tuberculos;
+        if(tuberculos.isBlank()) throw new NullPointerException();
+        else this.tuberculos = tuberculos;
     }
     
     public Papa(){}
