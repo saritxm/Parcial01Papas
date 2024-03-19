@@ -178,7 +178,7 @@ public class PanelInsertar extends javax.swing.JPanel {
     private javax.swing.JLabel eTuberculosI;
     private javax.swing.JLabel eZonaI;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.ButtonGroup zonas;
+    public javax.swing.ButtonGroup zonas;
     // End of variables declaration//GEN-END:variables
 
     public void camposVacios(){

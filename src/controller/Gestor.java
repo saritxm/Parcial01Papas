@@ -10,8 +10,6 @@ package controller;
  */
 import java.util.ArrayList;
 
-import javax.swing.JFileChooser;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -93,7 +91,6 @@ public class Gestor implements ActionListener {
         // Del panel Editar
         this.vPrincipal.getpEditar().btnModificarE.addActionListener(this);
         this.vPrincipal.getpEditar().btnEliminarE.addActionListener(this);
-        this.vPrincipal.getpEditar().btnGuardarE.addActionListener(this);
         this.vPrincipal.getpEditar().bNariñoE.addActionListener(this);
         this.vPrincipal.getpEditar().bBoyacaE.addActionListener(this);
         this.vPrincipal.getpEditar().bCundinamarcaE.addActionListener(this);
@@ -107,8 +104,11 @@ public class Gestor implements ActionListener {
         this.vProperties.bBoyacaP.addActionListener(this);
         this.vProperties.bCundinamarcaP.addActionListener(this);
 
-        papasCargadas = new ArrayList<>(papaDao.listaDePapas());
         initialize();
+    }
+
+    private void cargar(){
+        papasCargadas = new ArrayList<>(papaDao.listaDePapas());
     }
 
     private void papasProp(Papa p) {
@@ -124,7 +124,7 @@ public class Gestor implements ActionListener {
 
     private void obtenerRegistrosPapa() {
         try {
-            papasCargadas = new ArrayList<>(papaDao.listaDePapas());
+            cargar();
             this.vPrincipal.getpVer().jComboBoxV.removeAllItems();
             for (Papa i : papasCargadas) {
                 this.vPrincipal.getpVer().jComboBoxV.addItem(i.getNombre());
@@ -135,7 +135,7 @@ public class Gestor implements ActionListener {
 
     private void obtenerRegistrosPapa2() {
         try {
-            papasCargadas = new ArrayList<>(papaDao.listaDePapas());
+            cargar();
             this.vPrincipal.getpEditar().jComboBoxpEditar.removeAllItems();
             for (Papa i : papasCargadas) {
                 this.vPrincipal.getpEditar().jComboBoxpEditar.addItem(i.getNombre());
@@ -163,20 +163,20 @@ public class Gestor implements ActionListener {
     }
 
     private void asignacionEditar() {
-        this.vPrincipal.getpVer().radioZonas.setSelected(this.vPrincipal.getpVer().radioZonas.getSelection(), false);
-        Papa p = papasCargadas.get(vPrincipal.getpVer().jComboBoxV.getSelectedIndex());
-        this.vPrincipal.getpVer().cajaNombreV.setText(p.getNombre());
-        this.vPrincipal.getpVer().cajaEspecieV.setText(p.getEspecie());
-        this.vPrincipal.getpVer().cajaBayasV.setText(p.getBayas());
-        this.vPrincipal.getpVer().cajaFloracionV.setText(p.getFloracion());
-        this.vPrincipal.getpVer().cajaTuberculosV.setText(p.getTuberculos());
-        this.vPrincipal.getpVer().cajaHabitoV.setText(p.getHabitoC());
+        this.vPrincipal.getpEditar().ZonasbE.setSelected(this.vPrincipal.getpEditar().ZonasbE.getSelection(), false);
+        Papa p = papasCargadas.get(vPrincipal.getpEditar().jComboBoxpEditar.getSelectedIndex());
+        this.vPrincipal.getpEditar().cajaNombreE.setText(p.getNombre());
+        this.vPrincipal.getpEditar().cajaEspecieE.setText(p.getEspecie());
+        this.vPrincipal.getpEditar().cajaBayasE.setText(p.getBayas());
+        this.vPrincipal.getpEditar().cajaFloracionE.setText(p.getFloracion());
+        this.vPrincipal.getpEditar().cajaTuberculosE.setText(p.getTuberculos());
+        this.vPrincipal.getpEditar().cajaHabitoE.setText(p.getHabitoC());
         if (p.getZonaP().equals("NariÃ±o"))
-            this.vPrincipal.getpVer().bNariñoV.setSelected(true);
+        this.vPrincipal.getpEditar().bNariñoE.setSelected(true);
         else if (p.getZonaP().equals("Cundinamarca"))
-            this.vPrincipal.getpVer().bCundinamarcaV.setSelected(true);
+        this.vPrincipal.getpEditar().bCundinamarcaE.setSelected(true);
         else if (p.getZonaP().equals("Boyaca"))
-            this.vPrincipal.getpVer().bBoyacaV.setSelected(true);
+        this.vPrincipal.getpEditar().bBoyacaE.setSelected(true);
     }
 
     // Asignacion por papa especifica
@@ -216,24 +216,7 @@ public class Gestor implements ActionListener {
         }
     }
 
-    private void consultarPorNombre2(String x) {
-        Papa p = papaDao.consultarPapaPorNombre(x);
-        if (p == null)
-            this.vPrincipal.pConsultar.pNombre.noHay();
-        else {
-            this.vPrincipal.pConsultar.pNombre.cajaEspecieCN.setText(p.getEspecie());
-            this.vPrincipal.pConsultar.pNombre.cajaTuberculosCN.setText(p.getTuberculos());
-            this.vPrincipal.pConsultar.pNombre.cajaBayasCN.setText(p.getBayas());
-            this.vPrincipal.pConsultar.pNombre.cajaFloracionCN.setText(p.getFloracion());
-            this.vPrincipal.pConsultar.pNombre.cajaHabitoCN.setText(p.getHabitoC());
-            if (p.getZonaP().equals("NariÃ±o"))
-                this.vPrincipal.pConsultar.pNombre.bNariñoCN.setSelected(true);
-            else if (p.getZonaP().equals("Cundinamarca"))
-                this.vPrincipal.pConsultar.pNombre.bCundinamarcaCN.setSelected(true);
-            else if (p.getZonaP().equals("Boyaca"))
-                this.vPrincipal.pConsultar.pNombre.bBoyacaCN.setSelected(true);
-        }
-    }
+
 
     // Consulta por espacie
     private void consultarPorEspecie(String x) {
@@ -280,7 +263,7 @@ public class Gestor implements ActionListener {
                 p.setZonaP("Boyaca");
 
             papaDao.agregarPapa(p);
-            papasCargadas = new ArrayList<>(papaDao.listaDePapas());
+            vPrincipal.getpEditar();
             vPrincipal.getpInsertar().papaIngresada();
         } catch (NullPointerException e) {
             vPrincipal.getpInsertar().camposVacios();
@@ -288,10 +271,29 @@ public class Gestor implements ActionListener {
             vPrincipal.getpInsertar().papaRepetida();
         }
     }
+    //Editar una papa
+    private void editarPapa() {
+        try {
+            Papa p = new Papa();
+            p.setNombre(vPrincipal.getpEditar().cajaNombreE.getText());
+            p.setEspecie(vPrincipal.getpEditar().cajaEspecieE.getText());
+            p.setBayas(vPrincipal.getpEditar().cajaBayasE.getText());
+            p.setHabitoC(vPrincipal.getpEditar().cajaHabitoE.getText());
+            p.setFloracion(vPrincipal.getpEditar().cajaFloracionE.getText());
+            p.setTuberculos(vPrincipal.getpEditar().cajaTuberculosE.getText());
+            if (vPrincipal.getpEditar().bNariñoE.isSelected())
+                p.setZonaP("NariÃ±o");
+            else if (vPrincipal.getpEditar().bCundinamarcaE.isSelected())
+                p.setZonaP("Cundinamarca");
+            else if (vPrincipal.getpEditar().bBoyacaE.isSelected())
+                p.setZonaP("Boyaca");
 
-    private void modificarPapa(Papa p) {
-
-        papaDao.modificarPapa(p);
+            papaDao.modificarPapa(p);
+            cargar();
+            vPrincipal.getpEditar().modificacion();
+        } catch (NullPointerException e) {
+            vPrincipal.getpInsertar().camposVacios();
+        }
     }
 
     private void initialize() {
@@ -332,12 +334,6 @@ public class Gestor implements ActionListener {
         } else if (e.getSource() == vPrincipal.getpInsertar().btnInsertarI) {
             insertarPapa();
         }
-        // Panel editar una papa
-        else if (e.getSource() == this.vPrincipal.pEditar.jComboBoxpEditar) {
-            asignacionEditar();
-        } else if (e.getSource() == vPrincipal.getpEditar().btnModificarE) {
-            
-        }
         // Panel Consultar
         else if (e.getSource() == this.vPrincipal.pConsultar.btnSNombre) {
             this.vPrincipal.pConsultar.showNombre();
@@ -351,6 +347,32 @@ public class Gestor implements ActionListener {
             this.vPrincipal.pConsultar.showForma();
         } else if (e.getSource() == this.vPrincipal.pConsultar.btnSFloracion) {
             this.vPrincipal.pConsultar.showFloracion();
+        }
+        //Editar una papa
+        // Panel editar una papa
+        else if (e.getSource() == this.vPrincipal.pEditar.jComboBoxpEditar) {
+            try {
+                asignacionEditar();
+            } catch (Exception e2) {   
+            }
+        } else if (e.getSource() == vPrincipal.getpEditar().btnModificarE) {     
+            editarPapa();
+        }
+        else if (e.getSource() == vPrincipal.getpEditar().btnEliminarE) {
+            try {
+                papaDao.eliminarPapa(papasCargadas.get(vPrincipal.getpEditar().jComboBoxpEditar.getSelectedIndex()).getNombre());
+            } catch (SQLException e2) {
+                vPrincipal.getpEditar().errorEliminar();
+            }
+            
+            vPrincipal.getpEditar().eliminada();
+            cargar();
+            obtenerRegistrosPapa2();
+            try {
+                asignacionEditar();
+            } catch (Exception e2) {
+                   
+            }
         }
         // Consultas
         // Segun nombre
@@ -403,7 +425,7 @@ public class Gestor implements ActionListener {
                 papasCargadas.get(x).setBayas(this.vProperties.cajaBayasP.getText());
                 papasCargadas.get(x).setFloracion(this.vProperties.cajaFloracionP.getText());
                 papasCargadas.get(x).setHabitoC(this.vProperties.cajaHabitoP.getText());
-                modificarPapa(papasCargadas.get(x));
+                papaDao.modificarPapa(papasCargadas.get(x));
                 this.vProperties.limpiar();
                 x++;
                 papasProp(papasCargadas.get(x));
@@ -413,6 +435,12 @@ public class Gestor implements ActionListener {
                 vProperties.dispose();
                 vPrincipal.setVisible(true);
             }
+        }
+
+        //Boton salir
+        else if (e.getSource() == this.vPrincipal.getpMenu().btnSalirGeneral){
+            vPrincipal.dispose();
+            consulta.dispose();
         }
     }
 

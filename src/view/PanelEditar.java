@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Sara
@@ -47,7 +49,6 @@ public class PanelEditar extends javax.swing.JPanel {
         bCundinamarcaE = new javax.swing.JRadioButton();
         btnModificarE = new javax.swing.JButton();
         btnEliminarE = new javax.swing.JButton();
-        btnGuardarE = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -127,9 +128,6 @@ public class PanelEditar extends javax.swing.JPanel {
         btnEliminarE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Eliminar.jpg"))); // NOI18N
         add(btnEliminarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 250, 150, 40));
 
-        btnGuardarE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/guardar.jpg"))); // NOI18N
-        add(btnGuardarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, 130, 40));
-
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/PanelEditar.jpg"))); // NOI18N
         add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 370));
     }// </editor-fold>//GEN-END:initComponents
@@ -141,12 +139,11 @@ public class PanelEditar extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
-    private javax.swing.ButtonGroup ZonasbE;
+    public javax.swing.ButtonGroup ZonasbE;
     public javax.swing.JRadioButton bBoyacaE;
     public javax.swing.JRadioButton bCundinamarcaE;
     public javax.swing.JRadioButton bNariñoE;
     public javax.swing.JButton btnEliminarE;
-    public javax.swing.JButton btnGuardarE;
     public javax.swing.JButton btnModificarE;
     public javax.swing.JTextField cajaBayasE;
     public javax.swing.JTextField cajaEspecieE;
@@ -164,4 +161,14 @@ public class PanelEditar extends javax.swing.JPanel {
     private javax.swing.JLabel eZonasE;
     public javax.swing.JComboBox<String> jComboBoxpEditar;
     // End of variables declaration//GEN-END:variables
+
+    public void modificacion(){
+        JOptionPane.showMessageDialog(null, "Papa modificada con exito","Modificada", JOptionPane.INFORMATION_MESSAGE);
+    }
+    public void eliminada(){
+        JOptionPane.showMessageDialog(null, "Papa eliminada con exito","Eliminada", JOptionPane.INFORMATION_MESSAGE);
+    }
+    public void errorEliminar(){
+        JOptionPane.showMessageDialog(null, "Ha ocurrido un error inesperado", "ERROR", JOptionPane.ERROR_MESSAGE);
+    }
 }

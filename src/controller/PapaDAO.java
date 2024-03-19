@@ -104,12 +104,12 @@ public class PapaDAO {
             if (rs.next()) {
                 cantidadPapas = rs.getInt("total");
             } else {
-                // JOptionPane con el mensaje "No se encontraron papas de esta especie"
+                
             }
             st.close();
             Conexion.desconectar();
         } catch (SQLException ex) {
-            // JOptionPane con el mensaje "No se pudo realizar la consulta"
+            
         }
         return cantidadPapas;
     }
@@ -131,7 +131,7 @@ public class PapaDAO {
             st.close();
             Conexion.desconectar();
         } catch (SQLException ex) {
-            // JOptionPane con el mensaje "No se pudo realizar la consulta"
+        
         }
         return papas;
     }
@@ -158,27 +158,15 @@ public class PapaDAO {
         return papas;
     }
 
-    public void eliminarPapa(String nombre) {
+    public void eliminarPapa(String nombre) throws SQLException{
         String consulta = "DELETE FROM papa WHERE nombre = ?";
+        Connection con = Conexion.getConexion();
+        PreparedStatement ps = con.prepareStatement(consulta);
 
-        try {
-            Connection con = Conexion.getConexion();
-            PreparedStatement ps = con.prepareStatement(consulta);
+        ps.setString(1, nombre);
 
-            ps.setString(1, nombre);
-
-            int filasEliminadas = ps.executeUpdate();
-
-            if (filasEliminadas > 0) {
-                // JOptionPane con el mensaje "Papa eliminada correctamente"
-            } else {
-                // JOptionPane con el mensaje "No se encontro ninguna papa por eliminar"
-            }
-            ps.close();
-            con.close();
-        } catch (SQLException ex) {
-            // JOptionPane con el mensaje "Error al intentar eliminar la papa"
-        }
+        ps.close();
+        con.close();
     }
 
     public void modificarPapa(Papa papaNueva) {
@@ -196,18 +184,10 @@ public class PapaDAO {
             ps.setString(6, papaNueva.getTuberculos());
             ps.setString(7, papaNueva.getNombre());
 
-            int filasActualizadas = ps.executeUpdate();
-
-            if (filasActualizadas > 0) {
-                // JOptionPane con el mensaje "Papa modificada correctamente"
-            } else {
-                // JOptionPane con el mensaje "No se encontro papa por modificar"
-            }
-
             ps.close();
             con.close();
         } catch (SQLException ex) {
-            // JOptionPane con el mensaje "Error al intentar modificar la papa"
+            
         }
     }
 
@@ -228,7 +208,7 @@ public class PapaDAO {
             st.close();
             Conexion.desconectar();
         } catch (SQLException ex) {
-            // JOptionPne con el mensaje "No se pudo realizar la consulta"
+            
         }
         return papas;
     }
