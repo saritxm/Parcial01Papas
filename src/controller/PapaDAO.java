@@ -50,9 +50,9 @@ public class PapaDAO {
         
     }
 
-    public Papa consultarPapa(Papa p) {
+    public Papa consultarPapaPorNombre(String nombre) {
         Papa papa = null;
-        String consulta = "SELECT * FROM papa WHERE nombre ='" + p.getNombre() + "' AND especie = '" + p.getEspecie() + "' AND zonaP ='" + p.getZonaP() + "' AND habitoC ='" + p.getHabitoC() + "' AND floracion ='" + p.getFloracion() + "' AND bayas ='" + p.getBayas() + "' AND tuberculos ='" + p.getTuberculos() + "'";
+        String consulta = "SELECT * FROM papa WHERE nombre ='" + nombre + "'";
         try {
             con = (Connection) Conexion.getConexion();
             st = con.createStatement();
@@ -67,36 +67,38 @@ public class PapaDAO {
                 papa.setBayas(rs.getString("bayas"));
                 papa.setTuberculos(rs.getString("tuberculos"));
             } else {
-                System.out.println("No hay papa");
+                //JOptionPane con el mensaje "No se encontro ninguna papa con este nombre"
             }
             st.close();
             Conexion.desconectar();
         } catch (SQLException ex) {
-            System.out.println("No se pudo realizar la consulta");
+            //JOptionPane con el mensaje "No se pudo realizar la consulta"
         }
         return papa;
     }
+
+     
     
-    public void eliminarPapa(Papa p) {
+    public void eliminarPapa(String nombre) {
         String consulta = "DELETE FROM papa WHERE nombre = ?";
 
         try {
             Connection con = Conexion.getConexion();
             PreparedStatement ps = con.prepareStatement(consulta);
 
-            ps.setString(1, p.getNombre());
+            ps.setString(1, nombre);
 
             int filasEliminadas = ps.executeUpdate();
 
             if (filasEliminadas > 0) {
-                System.out.println("Papa eliminada correctamente.");
+                //JOptionPane con el mensaje "Papa eliminada correctamente"
             } else {
-                System.out.println("No se encontró una papa para eliminar.");
+                //JOptionPane con el mensaje "No se encontro ninguna papa por eliminar"
             }
             ps.close();
             con.close();
         } catch (SQLException ex) {
-            System.out.println("Error al intentar eliminar la papa: ");
+            //JOptionPane con el mensaje "Error al intentar eliminar la papa"
         }
     }
 
@@ -118,15 +120,15 @@ public class PapaDAO {
             int filasActualizadas = ps.executeUpdate();
 
             if (filasActualizadas > 0) {
-                System.out.println("Papa actualizada correctamente.");
+                //JOptionPane con el mensaje "Papa modificada correctamente"
             } else {
-                System.out.println("No se encontró una papa para actualizar.");
+                //JOptionPane con el mensaje "No se encontro papa por modificar"
             }
 
             ps.close();
             con.close();
         } catch (SQLException ex) {
-            System.out.println("Error al intentar actualizar la papa: ");
+            //JOptionPane con el mensaje "Error al intentar modificar la papa"
         }
     }
 
@@ -145,7 +147,7 @@ public class PapaDAO {
             st.close();
             Conexion.desconectar();
         } catch (SQLException ex) {
-            System.out.println("No se pudo realizar la consulta");
+            //JOptionPne con el mensaje "No se pudo realizar la consulta"
         }
         return papas;
     }
