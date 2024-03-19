@@ -77,7 +77,32 @@ public class PapaDAO {
         return papa;
     }
 
-     
+    public Papa consultarPapaPorEspecie(String especie){
+        Papa papa = null;
+        String consulta = "SELECT * FROM papa WHERE especie ='"+especie+"'";
+        try {
+            con = (Connection) Conexion.getConexion();
+            st = con.createStatement();
+            rs = st.executeQuery(consulta);
+            if (rs.next()) {
+                papa = new Papa();
+                papa.setEspecie(rs.getString("especie"));
+                papa.setNombre(rs.getString("nombre"));
+                papa.setZonaP(rs.getString("zonaP"));
+                papa.setHabitoC(rs.getString("habitoC"));
+                papa.setFloracion(rs.getString("floracion"));
+                papa.setBayas(rs.getString("bayas"));
+                papa.setTuberculos(rs.getString("tuberculos"));
+            } else {
+                //JOptionPane con el mensaje "No se encontraron papas de esta especie"
+            }
+            st.close();
+            Conexion.desconectar();
+        } catch (SQLException ex) {
+            //JOptionPane con el mensaje "No se pudo realizar la consulta"
+        }
+        return papa;
+    }
     
     public void eliminarPapa(String nombre) {
         String consulta = "DELETE FROM papa WHERE nombre = ?";
