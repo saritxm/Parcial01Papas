@@ -104,6 +104,26 @@ public class PapaDAO {
         return papa;
     }
     
+    public int contarPapasPorZona(String zonaP){
+        int cantidadPapas = 0;
+        String consulta = "SELECT COUNT(*) AS total FROM papa WHERE zonaP = '"+zonaP+"'";
+        try {
+            con = (Connection) Conexion.getConexion();
+            st = con.createStatement();
+            rs = st.executeQuery(consulta);
+            if (rs.next()) {
+                cantidadPapas = rs.getInt("total");
+            } else {
+                //JOptionPane con el mensaje "No se encontraron papas de esta especie"
+            }
+            st.close();
+            Conexion.desconectar();
+        } catch (SQLException ex) {
+            //JOptionPane con el mensaje "No se pudo realizar la consulta"
+        }
+        return cantidadPapas;
+    }
+    
     public void eliminarPapa(String nombre) {
         String consulta = "DELETE FROM papa WHERE nombre = ?";
 
