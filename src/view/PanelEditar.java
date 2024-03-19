@@ -26,6 +26,7 @@ public class PanelEditar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ZonasbE = new javax.swing.ButtonGroup();
         eEditarE = new javax.swing.JLabel();
         eNombreE = new javax.swing.JLabel();
         eEspecieE = new javax.swing.JLabel();
@@ -100,6 +101,7 @@ public class PanelEditar extends javax.swing.JPanel {
         eZonasE.setText("Zona de Producción");
         add(eZonasE, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 30, 170, -1));
 
+        ZonasbE.add(bNariñoE);
         bNariñoE.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
         bNariñoE.setText("Nariño");
         bNariñoE.addActionListener(new java.awt.event.ActionListener() {
@@ -109,10 +111,12 @@ public class PanelEditar extends javax.swing.JPanel {
         });
         add(bNariñoE, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 60, -1, -1));
 
+        ZonasbE.add(bBoyacaE);
         bBoyacaE.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
         bBoyacaE.setText("Boyacá");
         add(bBoyacaE, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, -1, -1));
 
+        ZonasbE.add(bCundinamarcaE);
         bCundinamarcaE.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
         bCundinamarcaE.setText("Cundinamarca");
         add(bCundinamarcaE, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, -1, -1));
@@ -137,6 +141,7 @@ public class PanelEditar extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
+    private javax.swing.ButtonGroup ZonasbE;
     public javax.swing.JRadioButton bBoyacaE;
     public javax.swing.JRadioButton bCundinamarcaE;
     public javax.swing.JRadioButton bNariñoE;
@@ -157,6 +162,6 @@ public class PanelEditar extends javax.swing.JPanel {
     private javax.swing.JLabel eNombreE;
     private javax.swing.JLabel eTuberculosE;
     private javax.swing.JLabel eZonasE;
-    private javax.swing.JComboBox<String> jComboBoxpEditar;
+    public javax.swing.JComboBox<String> jComboBoxpEditar;
     // End of variables declaration//GEN-END:variables
 }

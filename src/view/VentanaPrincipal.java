@@ -36,6 +36,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public PanelVer getpVer() {
         return pVer;
     }
+    public PanelEditar getpEditar() {
+        return pEditar;
+    }
 
     public VentanaPrincipal() {
         setTitle("Papas nativas Colombianas");

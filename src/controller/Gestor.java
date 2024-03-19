@@ -75,6 +75,14 @@ public class Gestor implements ActionListener {
         this.vPrincipal.getpMenu().getBtnEditarM().addActionListener(this);
 
         this.vPrincipal.getpVer().jComboBoxV.addActionListener(this);
+//Del panel Editar
+        this.vPrincipal.getpEditar().btnModificarE.addActionListener(this);
+        this.vPrincipal.getpEditar().btnEliminarE.addActionListener(this);
+        this.vPrincipal.getpEditar().btnGuardarE.addActionListener(this);
+        this.vPrincipal.getpEditar().bNariñoE.addActionListener(this);
+        this.vPrincipal.getpEditar().bBoyacaE.addActionListener(this);
+        this.vPrincipal.getpEditar().bCundinamarcaE.addActionListener(this);
+        this.vPrincipal.getpEditar().jComboBoxpEditar.addActionListener(this);
 
         this.vProperties.btnSiguienteP.addActionListener(this);
         this.vProperties.bNariñoP.addActionListener(this);
