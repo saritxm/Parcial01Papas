@@ -1,6 +1,7 @@
 package view;
 
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 public class FileC {
     public JFileChooser fProp;
@@ -17,5 +18,9 @@ public class FileC {
     public void fileR(){
         fResult= new JFileChooser(System.getProperty("user.dir"));
         fResult.setDialogTitle("Seleccionar el archivo de acceso aleatorio");
+    }
+
+    public void error(){
+        JOptionPane.showMessageDialog(null, "Ha ocurrido un error inesperado","ERROR",JOptionPane.ERROR_MESSAGE);
     }
 }

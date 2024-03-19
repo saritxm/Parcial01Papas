@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.sql.SQLException;
 
+import model.ArchivoAleatorio;
 import model.ArchivosProp;
 import model.Papa;
 import view.FileC;
@@ -26,6 +27,7 @@ public class Gestor implements ActionListener {
 
     private PapaDAO papaDao;
     private ArchivosProp ar;
+    private ArchivoAleatorio al;
     private ArrayList<Papa> papasCargadas;
 
     private VentanaPrincipal vPrincipal;
@@ -43,6 +45,7 @@ public class Gestor implements ActionListener {
         this.papaDao = new PapaDAO();
         this.vArchivos = new FileC();
         this.ar = new ArchivosProp();
+        this.al = new ArchivoAleatorio();
 
         // Instanciación de la vista
         this.vPrincipal = new VentanaPrincipal();
@@ -306,6 +309,14 @@ public class Gestor implements ActionListener {
             ar.guardarPapas();
         } catch (Exception e) {
         }
+        vArchivos.fileR();
+        vArchivos.fResult.showOpenDialog(vArchivos.fResult);
+        this.fResult = vArchivos.fResult.getSelectedFile();
+        try {
+            al.setArchivo(fResult);
+        } catch (Exception e) {
+            vArchivos.error();
+        }
         papasCargadas = new ArrayList<>(ar.getPapasCargadas());
         papasProp(papasCargadas.get(0));
         vProperties.setVisible(true);
@@ -437,6 +448,13 @@ public class Gestor implements ActionListener {
 
         //Boton salir
         else if (e.getSource() == this.vPrincipal.getpMenu().btnSalirGeneral){
+            cargar();
+            al.setPapas(papasCargadas);
+            try {
+                al.guardar();
+            } catch (Exception e2) {
+                vArchivos.error();
+            }
             vPrincipal.dispose();
             consulta.dispose();
         }
