@@ -77,14 +77,15 @@ public class PapaDAO {
         return papa;
     }
 
-    public Papa consultarPapaPorEspecie(String especie){
+    public ArrayList<Papa> consultarPapaPorEspecie(String especie){
+        ArrayList<Papa> papas = new ArrayList<>();
         Papa papa = null;
         String consulta = "SELECT * FROM papa WHERE especie ='"+especie+"'";
         try {
             con = (Connection) Conexion.getConexion();
             st = con.createStatement();
             rs = st.executeQuery(consulta);
-            if (rs.next()) {
+            while (rs.next()) {
                 papa = new Papa();
                 papa.setEspecie(rs.getString("especie"));
                 papa.setNombre(rs.getString("nombre"));
@@ -93,18 +94,16 @@ public class PapaDAO {
                 papa.setFloracion(rs.getString("floracion"));
                 papa.setBayas(rs.getString("bayas"));
                 papa.setTuberculos(rs.getString("tuberculos"));
-            } else {
-                //JOptionPane con el mensaje "No se encontraron papas de esta especie"
-            }
+                papas.add(papa);
             st.close();
             Conexion.desconectar();
         } catch (SQLException ex) {
             //JOptionPane con el mensaje "No se pudo realizar la consulta"
         }
-        return papa;
+        return papas;
     }
     
-    public int contarPapasPorZona(String zonaP){
+    public int consultarPapasPorZona(String zonaP){
         int cantidadPapas = 0;
         String consulta = "SELECT COUNT(*) AS total FROM papa WHERE zonaP = '"+zonaP+"'";
         try {
@@ -122,6 +121,60 @@ public class PapaDAO {
             //JOptionPane con el mensaje "No se pudo realizar la consulta"
         }
         return cantidadPapas;
+    }
+
+    public ArrayList<Papa> consultarPapaPorTuberculo(String formaTuberculo){
+        ArrayList<Papa> papas = new ArrayList<>();
+        Papa papa = null;
+        String consulta = "SELECT * FROM papa WHERE tuberculos LIKE'%"+formaTuberculo+"%'";
+        try {
+            con = (Connection) Conexion.getConexion();
+            st = con.createStatement();
+            rs = st.executeQuery(consulta);
+            while(rs.next()) {
+                papa = new Papa();
+                papa.setEspecie(rs.getString("especie"));
+                papa.setNombre(rs.getString("nombre"));
+                papa.setZonaP(rs.getString("zonaP"));
+                papa.setHabitoC(rs.getString("habitoC"));
+                papa.setFloracion(rs.getString("floracion"));
+                papa.setBayas(rs.getString("bayas"));
+                papa.setTuberculos(rs.getString("tuberculos"));
+                papas.add(papa);
+            } 
+            st.close();
+            Conexion.desconectar();
+        } catch (SQLException ex) {
+            //JOptionPane con el mensaje "No se pudo realizar la consulta"
+        }
+        return papas;
+    }
+
+    public ArrayList<Papa> consultarPapaPorFloracion(String colorFloracion){
+        ArrayList<Papa> papas = new ArrayList<>();
+        Papa papa = null;
+        String consulta = "SELECT * FROM papa WHERE floracion LIKE'%"+colorFloracion+"%'";
+        try {
+            con = (Connection) Conexion.getConexion();
+            st = con.createStatement();
+            rs = st.executeQuery(consulta);
+            while(rs.next()) {
+                papa = new Papa();
+                papa.setEspecie(rs.getString("especie"));
+                papa.setNombre(rs.getString("nombre"));
+                papa.setZonaP(rs.getString("zonaP"));
+                papa.setHabitoC(rs.getString("habitoC"));
+                papa.setFloracion(rs.getString("floracion"));
+                papa.setBayas(rs.getString("bayas"));
+                papa.setTuberculos(rs.getString("tuberculos"));
+                papas.add(papa);
+            } 
+            st.close();
+            Conexion.desconectar();
+        } catch (SQLException ex) {
+            //JOptionPane con el mensaje "No se pudo realizar la consulta"
+        }
+        return papas;
     }
     
     public void eliminarPapa(String nombre) {
