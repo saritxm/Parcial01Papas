@@ -116,19 +116,16 @@ public class PanelVer extends javax.swing.JPanel {
 
         radioZonas.add(bNariñoV);
         bNariñoV.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
-        bNariñoV.setForeground(new java.awt.Color(245, 219, 167));
         bNariñoV.setText("Nariño");
         add(bNariñoV, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 70, -1, -1));
 
         radioZonas.add(bBoyacaV);
         bBoyacaV.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
-        bBoyacaV.setForeground(new java.awt.Color(244, 219, 168));
         bBoyacaV.setText("Boyacá");
         add(bBoyacaV, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, -1, -1));
 
         radioZonas.add(bCundinamarcaV);
         bCundinamarcaV.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
-        bCundinamarcaV.setForeground(new java.awt.Color(244, 219, 168));
         bCundinamarcaV.setText("Cundinamarca");
         add(bCundinamarcaV, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 150, -1, -1));
 

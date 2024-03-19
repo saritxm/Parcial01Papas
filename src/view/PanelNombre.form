@@ -148,6 +148,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="cajaEspecieCN">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -158,6 +161,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="cajaHabitoCN">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -168,6 +174,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="cajaFloracionCN">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -178,6 +187,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="cajaBayasCN">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -188,6 +200,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="cajaTuberculosCN">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -206,6 +221,7 @@
           <Font name="Sylfaen" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Boyac&#xe1;"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bBoyacaCNActionPerformed"/>
@@ -228,6 +244,7 @@
           <Font name="Sylfaen" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cundinamarca"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bCundinamarcaCNActionPerformed"/>
@@ -250,6 +267,7 @@
           <Font name="Sylfaen" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Nari&#xf1;o"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

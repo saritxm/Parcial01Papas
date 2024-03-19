@@ -86,15 +86,26 @@ public class PanelNombre extends javax.swing.JPanel {
         jLabel7.setText("Zona de Producción");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 30, -1, -1));
         add(cajaNombreCN, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 200, -1));
+
+        cajaEspecieCN.setEditable(false);
         add(cajaEspecieCN, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 200, -1));
+
+        cajaHabitoCN.setEditable(false);
         add(cajaHabitoCN, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 200, -1));
+
+        cajaFloracionCN.setEditable(false);
         add(cajaFloracionCN, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 200, -1));
+
+        cajaBayasCN.setEditable(false);
         add(cajaBayasCN, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 200, -1));
+
+        cajaTuberculosCN.setEditable(false);
         add(cajaTuberculosCN, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 200, -1));
 
         bZonasCN.add(bBoyacaCN);
         bBoyacaCN.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
         bBoyacaCN.setText("Boyacá");
+        bBoyacaCN.setEnabled(false);
         bBoyacaCN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bBoyacaCNActionPerformed(evt);
@@ -105,6 +116,7 @@ public class PanelNombre extends javax.swing.JPanel {
         bZonasCN.add(bCundinamarcaCN);
         bCundinamarcaCN.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
         bCundinamarcaCN.setText("Cundinamarca");
+        bCundinamarcaCN.setEnabled(false);
         bCundinamarcaCN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bCundinamarcaCNActionPerformed(evt);
@@ -115,6 +127,7 @@ public class PanelNombre extends javax.swing.JPanel {
         bZonasCN.add(bNariñoCN);
         bNariñoCN.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
         bNariñoCN.setText("Nariño");
+        bNariñoCN.setEnabled(false);
         add(bNariñoCN, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, -1, -1));
 
         btnConsultarCN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btnconsultarCN.jpg"))); // NOI18N

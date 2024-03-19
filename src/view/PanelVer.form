@@ -269,9 +269,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Sylfaen" size="18" style="0"/>
         </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="a7" green="db" red="f5" type="rgb"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Nari&#xf1;o"/>
       </Properties>
       <AuxValues>
@@ -291,9 +288,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Sylfaen" size="18" style="0"/>
         </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="a8" green="db" red="f4" type="rgb"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Boyac&#xe1;"/>
       </Properties>
       <AuxValues>
@@ -312,9 +306,6 @@
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Sylfaen" size="18" style="0"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="a8" green="db" red="f4" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cundinamarca"/>
       </Properties>
