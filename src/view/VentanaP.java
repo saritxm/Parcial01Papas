@@ -88,9 +88,11 @@ public class VentanaP extends javax.swing.JFrame {
         eZonasP.setText("Zona de Producción");
         jPanel1.add(eZonasP, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, -1, -1));
 
+        cajaNombreP.setEditable(false);
         cajaNombreP.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.add(cajaNombreP, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 200, -1));
 
+        cajaEspecieP.setEditable(false);
         cajaEspecieP.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.add(cajaEspecieP, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 200, -1));
 
@@ -110,18 +112,21 @@ public class VentanaP extends javax.swing.JFrame {
         bNariñoP.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
         bNariñoP.setForeground(new java.awt.Color(204, 255, 255));
         bNariñoP.setText("Nariño");
+        bNariñoP.setEnabled(false);
         jPanel1.add(bNariñoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, -1, -1));
 
         zonasP.add(bBoyacaP);
         bBoyacaP.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
         bBoyacaP.setForeground(new java.awt.Color(204, 255, 255));
         bBoyacaP.setText("Boyacá");
+        bBoyacaP.setEnabled(false);
         jPanel1.add(bBoyacaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 220, -1, -1));
 
         zonasP.add(bCundinamarcaP);
         bCundinamarcaP.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
         bCundinamarcaP.setForeground(new java.awt.Color(204, 255, 255));
         bCundinamarcaP.setText("Cundinamarca");
+        bCundinamarcaP.setEnabled(false);
         jPanel1.add(bCundinamarcaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, -1, -1));
 
         btnSiguienteP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btnSiguiente.jpg"))); // NOI18N
