@@ -38,11 +38,6 @@ public class Gestor implements ActionListener {
 
         // Escucha a los botones y radioButtons
 
-        this.vPrincipal.getpConsultar().btnGuardarC.addActionListener(this);
-        this.vPrincipal.getpConsultar().bNariñoC.addActionListener(this);
-        this.vPrincipal.getpConsultar().bBoyacaC.addActionListener(this);
-        this.vPrincipal.getpConsultar().bCundinamarcaC.addActionListener(this);
-
         this.vPrincipal.getpInsertar().btnLimpiarI.addActionListener(this);
         this.vPrincipal.getpInsertar().btnInsertarI.addActionListener(this);
         this.vPrincipal.getpInsertar().bNariñoI.addActionListener(this);
