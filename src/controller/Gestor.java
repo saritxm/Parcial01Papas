@@ -128,17 +128,6 @@ public class Gestor implements ActionListener {
         papaDao.modificarPapa(p);
     }
 
-    private void eliminarPapa(Papa p) {
-        papaDao = new PapaDAO();
-        papaDao.eliminarPapa(p);
-    }
-
-    //private void cargar() {
-    //    ar.setProp(new File("data/preload.properties"));
-    //    ar.cargarPapas();
-     //   ar.guardarPapas();
-    //}
-
     private void initialize() {
         vPrincipal.setVisible(true);
     }
