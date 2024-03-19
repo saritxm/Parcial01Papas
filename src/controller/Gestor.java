@@ -53,6 +53,7 @@ public class Gestor implements ActionListener {
         this.vPrincipal.getpMenu().getBtnInsertarM().addActionListener(this);
         this.vPrincipal.getpMenu().getBtnVerM().addActionListener(this);
         this.vPrincipal.getpMenu().getBtnSalirGeneral().addActionListener(this);
+        
         this.vPrincipal.getpMenu().getBtnEditarM().addActionListener(this);
 
         this.vPrincipal.getpVer().jComboBoxV.addActionListener(this);
