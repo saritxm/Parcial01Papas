@@ -90,10 +90,6 @@ public class Papa {
         this.nombre = nombre;
         this.especie = especie;
         this.zonaP = zonaP;
-        this.habitoC = "";
-        this.floracion = "";
-        this.bayas = "";
-        this.tuberculos = "";
     }
 
     @Override

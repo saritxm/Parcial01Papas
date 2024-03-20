@@ -206,7 +206,9 @@ public class PanelInsertar extends javax.swing.JPanel {
         cajaHabito.setText("");
         cajaNombre.setText("");
         cajaTuberculos.setText("");
-        zonas.setSelected(zonas.getSelection(), false); // Desmarca cualquier selección de zona
+        bBoyacaI.setSelected(false);
+        bNariñoI.setSelected(false);
+        bCundinamarcaI.setSelected(false);  // Desmarca cualquier selección de zona
 
     }
 

@@ -262,6 +262,8 @@ public class Gestor implements ActionListener {
                 p.setZonaP("Cundinamarca");
             else if (this.vPrincipal.getpInsertar().bBoyacaI.isSelected())
                 p.setZonaP("Boyaca");
+            else 
+                p.setZonaP(null);
 
             papaDao.agregarPapa(p);
             vPrincipal.getpEditar();
