@@ -13,7 +13,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexion {
-
+    // Toma la ruta de acceso a la base de datos
     private static Connection cn = null;
     private static String URLBD = "jdbc:mysql://localhost:3306/empresa";
     private static String usuario = "root";
@@ -21,13 +21,14 @@ public class Conexion {
 
     public static Connection getConexion() {
         try {
+            //obtiene la conexion con la base de datos usando los datos dados
             cn = DriverManager.getConnection(URLBD, usuario, contrasena);
         } catch (SQLException ex) {
             
         }
         return cn;
     }
-
+    //cierra la conexion
     public static void desconectar() {
         cn = null;
     }
