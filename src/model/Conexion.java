@@ -14,21 +14,23 @@ import java.sql.SQLException;
 
 public class Conexion {
 
-    private static Connection cn = null;
-    private static String URLBD = "jdbc:mysql://localhost:3306/empresa";
-    private static String usuario = "root";
-    private static String contrasena = "";
-
+    private static Connection cn = null; // Objeto para establecer la conexión con la base de datos
+    private static String URLBD = "jdbc:mysql://localhost:3306/empresa"; // URL de la base de datos
+    private static String usuario = "root"; // Nombre de usuario de la base de datos
+    private static String contrasena = ""; // Contraseña de la base de datos
+    
+    // Método estático para obtener una conexión a la base de datos
     public static Connection getConexion() {
         try {
+            // Intenta establecer la conexión con la base de datos utilizando los parámetros de conexión
             cn = DriverManager.getConnection(URLBD, usuario, contrasena);
         } catch (SQLException ex) {
             
         }
-        return cn;
+        return cn; // Devuelve la conexión establecida o null si ocurrió un error
     }
-
+    // Método estático para desconectar la conexión a la base de datos
     public static void desconectar() {
-        cn = null;
+        cn = null; // Establece el objeto Connection como null para cerrar la conexión
     }
 }
