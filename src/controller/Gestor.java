@@ -71,7 +71,7 @@ public class Gestor implements ActionListener {
         this.vPrincipal.getpConsultar().pNombre.bNariñoCN.addActionListener(this);
         this.vPrincipal.getpConsultar().pNombre.bBoyacaCN.addActionListener(this);
         this.vPrincipal.getpConsultar().pNombre.bCundinamarcaCN.addActionListener(this);
-        // Panel especia
+        // Panel especie
         this.vPrincipal.getpConsultar().pEspecie.jComboBoxEspecie.addActionListener(this);
         this.vPrincipal.getpConsultar().pEspecie.btnConsultarEspecie.addActionListener(this);
         // Panel Zonas
