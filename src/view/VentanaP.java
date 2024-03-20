@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author Sara
  */
 public class VentanaP extends javax.swing.JFrame {
-
+    // Ventana que permite el ingreso de los demas campos de las papas del archivo de propiedades
     /**
      * Creates new form VentanaP
      */
@@ -174,11 +174,11 @@ public class VentanaP extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.ButtonGroup zonasP;
     // End of variables declaration//GEN-END:variables
-
+    // Muestra un mensaje de error cuando hay campos vacíos.
     public void camposVacios(){
         JOptionPane.showMessageDialog(null, "Llene todos lo campos por favor", "CAMPOS VACIOS", JOptionPane.ERROR_MESSAGE);
     }
-
+    //Limpia los campos de entrada de datos.
     public void limpiar(){
         cajaBayasP.setText("");
         cajaEspecieP.setText("");
@@ -186,7 +186,7 @@ public class VentanaP extends javax.swing.JFrame {
         cajaHabitoP.setText("");
         cajaNombreP.setText("");
         cajaTuberculosP.setText("");
-        zonasP.setSelected(zonasP.getSelection(), false);
+        zonasP.setSelected(zonasP.getSelection(), false); // Desmarca cualquier selección de zonas
         
     }
 }
