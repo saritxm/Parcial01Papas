@@ -251,8 +251,12 @@ public class Gestor implements ActionListener {
     private void consultarPorEspecie(String x) {
         this.vPrincipal.pConsultar.pEspecie.jComboBoxEspecie.removeAllItems();
         papasCargadas = new ArrayList<>(papaDao.consultarPapaPorEspecie(x));
-        for (Papa i : papasCargadas)
-            this.vPrincipal.pConsultar.pEspecie.jComboBoxEspecie.addItem(i.getNombre());
+        if (papasCargadas.isEmpty())
+            this.vPrincipal.pConsultar.pNombre.noHay();
+        else
+            for (Papa i : papasCargadas)
+                this.vPrincipal.pConsultar.pEspecie.jComboBoxEspecie.addItem(i.getNombre());
+
     }
 
     // Asignar el valor del numero de papas segun zona prod a su respectiva caja
@@ -266,8 +270,11 @@ public class Gestor implements ActionListener {
     private void consultarPorForma(String f) {
         this.vPrincipal.pConsultar.pForma.jComboBoxPapasCF.removeAllItems();
         papasCargadas = new ArrayList<>(papaDao.consultarPapaPorTuberculo(f));
-        for (Papa i : papasCargadas)
-            this.vPrincipal.pConsultar.pForma.jComboBoxPapasCF.addItem(i.getNombre());
+        if (papasCargadas.isEmpty())
+            this.vPrincipal.pConsultar.pNombre.noHay();
+        else
+            for (Papa i : papasCargadas)
+                this.vPrincipal.pConsultar.pForma.jComboBoxPapasCF.addItem(i.getNombre());
     }
 
     // Asignar el valor del numero de papas segun el color a su respectiva caja
@@ -276,12 +283,12 @@ public class Gestor implements ActionListener {
                 .setText(String.valueOf(papaDao.consultarPapaPorFloracion(f).size()));
     }
 
-    //Metodo para insertar una papa
+    // Metodo para insertar una papa
     private void insertarPapa() {
         try {
-            //Crea nuestra papa
+            // Crea nuestra papa
             Papa p = new Papa();
-            //Obtener todos los atributos insertados por el usuario
+            // Obtener todos los atributos insertados por el usuario
             p.setNombre(vPrincipal.getpInsertar().cajaNombre.getText());
             p.setEspecie(vPrincipal.getpInsertar().cajaEspecie.getText());
             p.setBayas(vPrincipal.getpInsertar().cajaBayas.getText());
@@ -297,19 +304,19 @@ public class Gestor implements ActionListener {
             else
                 p.setZonaP(null);
 
-            //Ingreso a la DB
+            // Ingreso a la DB
             papaDao.agregarPapa(p);
             vPrincipal.getpEditar();
-            //Aviso
+            // Aviso
             vPrincipal.getpInsertar().papaIngresada();
         } catch (NullPointerException e) {
-            vPrincipal.getpInsertar().camposVacios();   //Aviso campos vacios
+            vPrincipal.getpInsertar().camposVacios(); // Aviso campos vacios
         } catch (SQLException e2) {
-            vPrincipal.getpInsertar().papaRepetida();   //Papa repetida
+            vPrincipal.getpInsertar().papaRepetida(); // Papa repetida
         }
     }
 
-    //Editar una papa
+    // Editar una papa
     private void editarPapa() {
         try {
             Papa p = new Papa();
@@ -334,9 +341,9 @@ public class Gestor implements ActionListener {
         }
     }
 
-    //Inicializar el programa
+    // Inicializar el programa
     private void initialize() {
-        //Carga de los archivos de propiedades y aleatorio
+        // Carga de los archivos de propiedades y aleatorio
         vArchivos.fileP();
         vArchivos.fProp.showOpenDialog(vArchivos.fProp);
         this.fProp = vArchivos.fProp.getSelectedFile();
@@ -354,9 +361,9 @@ public class Gestor implements ActionListener {
         } catch (Exception e) {
             vArchivos.error();
         }
-        //Carga nuestras papas del propierties
+        // Carga nuestras papas del propierties
         papasCargadas = new ArrayList<>(ar.getPapasCargadas());
-        //Inicio para llenar los datos faltantes
+        // Inicio para llenar los datos faltantes
         papasProp(papasCargadas.get(0));
         vProperties.setVisible(true);
     }

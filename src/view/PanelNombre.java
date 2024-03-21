@@ -169,6 +169,6 @@ public class PanelNombre extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
     // Metodo que muestra un mensaje
     public void noHay() {
-        JOptionPane.showMessageDialog(null, "No hay papas con este nombre", "NO HAY", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "No hay papas con el campo consultado", "NO HAY", JOptionPane.INFORMATION_MESSAGE);
     }
 }
