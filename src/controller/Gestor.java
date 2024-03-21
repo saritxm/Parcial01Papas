@@ -277,6 +277,7 @@ public class Gestor implements ActionListener {
                 this.vPrincipal.pConsultar.pForma.jComboBoxPapasCF.addItem(i.getNombre());
     }
 
+    //hola
     // Asignar el valor del numero de papas segun el color a su respectiva caja
     private void consultaColor(String f) {
         this.vPrincipal.pConsultar.pFloracion.cajaNumeroPapasCFL
